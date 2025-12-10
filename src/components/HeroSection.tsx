@@ -7,7 +7,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <h1 className="heading-xl slide-up opacity-0 stagger-1 text-6xl font-sans">
+        <h1 className="heading-xl slide-up opacity-0 stagger-1 text-6xl font-sans shadow-none">
           <span className="text-foreground">Sawasdee Krub! I'm Nord</span>
           <span className="text-primary neon-text"> — I am a brand</span>
           <br />
