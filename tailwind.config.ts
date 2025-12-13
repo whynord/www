@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Manrope', 'system-ui', 'sans-serif'],
+        sans: ['Space Grotesque', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
