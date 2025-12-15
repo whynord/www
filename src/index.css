@@ -74,6 +74,10 @@
     font-family: 'Space Grotesk', sans-serif;
   }
 
+  p {
+    @apply font-inclusive;  /* add this rule */
+  }
+
   html {
     scroll-behavior: smooth;
   }
