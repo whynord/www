@@ -75,7 +75,7 @@
   }
 
   p {
-    @apply font-inclusive;  /* add this rule */
+    @apply font-inclusive;
   }
 
   html {
@@ -152,9 +152,9 @@
   }
 }
 
-.space-grotesk-<uniquifier> {
+.space-grotesk-regular {
   font-family: "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400;
   font-style: normal;
 }
