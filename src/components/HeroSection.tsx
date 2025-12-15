@@ -8,18 +8,18 @@ const HeroSection = () => {
         </div>
 
         <h1 className="heading-xl slide-up opacity-0 stagger-1 text-6xl font-sans shadow-none font-light">
-          <span className="text-foreground">Sawasdee Krub!</span>
+          <span className="text-foreground font-thin">Sawasdee Krub!</span>
           <br />
-          <span className="text-primary neon-text"> I'm Nord — I am a brand and marketing creative freelancer — based in Bangkok, Thailand.</span>
+          <span className="text-primary neon-text font-thin"> I'm Nord — I am a brand and marketing creative freelancer — based in Bangkok, Thailand.</span>
         </h1>
 
-        <p className="heading-lg mt-6 text-foreground slide-up opacity-0 stagger-2">
+        <p className="heading-lg mt-6 text-foreground slide-up opacity-0 stagger-2 font-normal">
           I can help you with your marketing communications
           <br />
           needs and more!
         </p>
 
-        <a href="#contact" className="inline-block mt-10 text-xl md:text-2xl text-muted-foreground hover:text-primary transition-colors duration-300 slide-up opacity-0 stagger-3">
+        <a href="#contact" className="inline-block mt-10 text-xl md:text-2xl text-muted-foreground hover:text-primary transition-colors duration-300 slide-up opacity-0 stagger-3 font-sans font-normal">
           Let's get in touch!
         </a>
       </div>
