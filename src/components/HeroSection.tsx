@@ -19,7 +19,7 @@ const HeroSection = () => {
           needs and more!
         </p>
 
-        <a href="#contact" className="inline-block mt-10 text-xl md:text-2xl text-muted-foreground hover:text-primary transition-colors duration-300 slide-up opacity-0 stagger-3 font-sans font-normal">
+        <a href="#contact" className="inline-block mt-10 text-xl md:text-2xl text-muted-foreground hover:text-primary transition-colors duration-300 slide-up opacity-0 stagger-3 font-inclusive font-normal">
           Let's get in touch!
         </a>
       </div>
