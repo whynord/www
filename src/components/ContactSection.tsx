@@ -38,7 +38,7 @@ const ContactSection = () => {
           <h2 className="heading-lg mt-4 text-foreground">
             I'd love to hear from you!
           </h2>
-          <p className="mt-4 text-muted-foreground">
+          <p className="mt-4 text-muted-foreground font-inclusive">
             Whether you have a project in mind, need more information, or just
             want to chat, feel free to reach out. Let's create something amazing
             together.
