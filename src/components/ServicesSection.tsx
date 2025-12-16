@@ -19,12 +19,12 @@ const ServicesSection = () => {
           <h2 className="heading-lg mt-4 text-foreground font-normal font-sans">
             Create. Develop. Extend.
           </h2>
-          <p className="mt-6 max-w-2xl mx-auto text-muted-foreground leading-relaxed font-sans text-base font-normal">
+          <p className="mt-6 max-w-2xl mx-auto text-muted-foreground leading-relaxed font-inclusive text-base font-normal">
             I have been working in marketing/communications and brand scopes for
             more than 25 years hence I believe dearly that I would be able to
             offer you my experiences getting you to your goal with flying colors.
           </p>
-          <p className="mt-4 text-muted-foreground">
+          <p className="mt-4 text-muted-foreground font-inclusive">
             If you are interested, please do reach out.
           </p>
         </div>
