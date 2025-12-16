@@ -36,7 +36,7 @@ const ServicesSection = () => {
               <span className="service-number group-hover:text-primary/40 transition-colors duration-300">
                 {service.number}
               </span>
-              <h3 className="text-xl font-normal text-foreground mt-2 group-hover:text-primary transition-colors duration-300 uppercase">
+              <h3 className="font-inclusive font-medium tracking-widest leading-none text-foreground mt-2 group-hover:text-primary transition-colors duration-300 uppercase text-lg">
                 {service.title}
               </h3>
               <p className="mt-4 text-muted-foreground text-sm mt-4 leading-none">
