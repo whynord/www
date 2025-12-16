@@ -13,7 +13,7 @@ const HeroSection = () => {
           <span className="text-primary neon-text font-thin"> I'm Nord — I am a brand and marketing creative freelancer — based in Bangkok, Thailand.</span>
         </h1>
 
-        <p className="heading-lg mt-6 text-foreground slide-up opacity-0 stagger-2 font-normal">
+        <p className="heading-lg mt-6 text-foreground slide-up opacity-0 stagger-2 font-inclusive">
           I can help you with your marketing communications
           <br />
           needs and more!
