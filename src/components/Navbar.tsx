@@ -25,10 +25,7 @@ const Navbar = () => {
       <nav className="container mx-auto px-6 py-5 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-3">
           <span className="text-2xl font-bold tracking-tight font-mono">
-            <span className="text-primary">N</span>
-            <span className="text-foreground">o</span>
-            <span className="text-primary">R</span>
-            <span className="text-foreground">d</span>
+            <span className="text-primary">NORD</span>
           </span>
           <span className="hidden sm:block text-xs tracking-[0.15em] uppercase text-muted-foreground">
             Passion in Brand
