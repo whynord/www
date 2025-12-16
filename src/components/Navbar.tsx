@@ -24,7 +24,7 @@ const Navbar = () => {
   return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/90 backdrop-blur-md border-b border-border" : ""}`}>
       <nav className="container mx-auto px-6 py-5 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-3">
-          <span className="text-2xl font-bold tracking-tight font-mono">
+          <span className="text-2xl font-bold tracking-tight font-inclusive">
             <span className="text-primary">NORD</span>
           </span>
           <span className="hidden sm:block text-xs tracking-[0.15em] uppercase text-muted-foreground">
