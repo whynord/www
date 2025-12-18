@@ -71,7 +71,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-inclusive antialiased;
     font-family: 'Inclusive Sans', sans-serif;
   }
 
@@ -106,11 +106,11 @@
   }
 
   .heading-xl {
-    @apply text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight font-sans;
   }
 
   .heading-lg {
-    @apply text-2xl md:text-3xl font-semibold;
+    @apply text-2xl md:text-3xl font-semibold font-sans;
   }
 
   .service-number {
