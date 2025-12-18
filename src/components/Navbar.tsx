@@ -27,6 +27,9 @@ const Navbar = () => {
           <span className="text-2xl font-bold tracking-tight font-inclusive">
             <span className="text-primary">NORD</span>
           </span>
+          <div className="w-auto h-auto overflow-visible m-0">
+            <img src="public/images/logo-2-2025green.png" alt="Nord profile" className="w-160" />
+          </div>
           <span className="hidden sm:block text-xs tracking-[0.15em] uppercase text-muted-foreground">
             Passion in Brand
           </span>
