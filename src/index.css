@@ -71,7 +71,7 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Inclusive Sans', sans-serif;
   }
 
   p {
