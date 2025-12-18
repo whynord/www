@@ -24,7 +24,7 @@ const Navbar = () => {
   return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/90 backdrop-blur-md border-b border-border" : ""}`}>
       <nav className="container mx-auto px-6 py-5 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-3">
-          <div className="w-160 h-auto overflow-visible m-0">
+          <div className="w-auto h-auto overflow-visible m-0">
             <img src="/images/logo-2-2025green.png" alt="Nord profile" className="w-160" />
           </div>
           <span className="hidden sm:block text-xs tracking-[0.15em] uppercase text-muted-foreground">
