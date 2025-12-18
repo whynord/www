@@ -25,7 +25,7 @@ const Navbar = () => {
       <nav className="container mx-auto px-6 py-5 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-3">
           <div className="w-auto h-auto overflow-visible m-0">
-            <img src="/images/logo-2-2025green.png" alt="Nord profile" className="w-160" />
+            <img src="/images/logo-2-2025green.png" width={160} alt="Nord profile" className="w-160" />
           </div>
           <span className="hidden sm:block text-xs tracking-[0.15em] uppercase text-muted-foreground">
             Passion in Brand
