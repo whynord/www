@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+
 const Navbar = () => {
+  const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -8,19 +11,12 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  const navItems = [{
-    label: "Home",
-    href: "#home"
-  }, {
-    label: "About",
-    href: "#about"
-  }, {
-    label: "Works",
-    href: "#works"
-  }, {
-    label: "Contact",
-    href: "#contact"
-  }];
+  const navItems = [
+    { label: "Home", href: "/", isRoute: true },
+    { label: "About", href: "/about", isRoute: true },
+    { label: "Works", href: location.pathname === "/" ? "#works" : "/#works", isRoute: false },
+    { label: "Contact", href: location.pathname === "/" ? "#contact" : "/#contact", isRoute: false },
+  ];
   return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/90 backdrop-blur-md border-b border-border" : ""}`}>
       <nav className="container mx-auto px-6 py-5 flex items-end justify-between">
         <a href="#home" className="flex gap-x-10">
@@ -33,11 +29,19 @@ const Navbar = () => {
         </a>
 
         <ul className="hidden md:flex items-center gap-8">
-          {navItems.map(item => <li key={item.label}>
-              <a href={item.href} className="nav-link">
-                {item.label}
-              </a>
-            </li>)}
+          {navItems.map(item => (
+            <li key={item.label}>
+              {item.isRoute ? (
+                <Link to={item.href} className="nav-link">
+                  {item.label}
+                </Link>
+              ) : (
+                <a href={item.href} className="nav-link">
+                  {item.label}
+                </a>
+              )}
+            </li>
+          ))}
         </ul>
 
         <button className="md:hidden text-foreground">
