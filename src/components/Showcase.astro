@@ -10,11 +10,11 @@ import Project05 from "../images/showcase/5-M-GlobalReport2025.png";
 import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
 ---
 
-<div class="w-screen h-full flex flex-col items-start justify-start">
+<div class="w-screen h-screen flex flex-col items-start justify-center relative">
 
-    <div class="slider flex w-full h-full relative items-start justify-start">
+    <div class="slider flex w-full h-full justify-center overflow:hidden">
 
-        <div class="list flex w-full h-full flex flex-col font-sora">
+        <div class="list w-full h-fit flex flex-col font-sora">
     
             <div class="item active">
                 <img src={Project01.src} alt="Brand Development project for C&R Singapore" />
@@ -80,35 +80,34 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
                     </div>
                 </div>
             </div>
-
         </div>
         
-        <div class="flex flex-col w-full max-w-200 justify-center items-center">
-            <div class="tn bg-nordsilver/5 backdrop-blur-xs hidden invisible tablet:flex tablet:visible">
-                <div class="item active brightness-100 shadow-xl">
-                    <img src={Project01tn.src} alt="Thumbnail for C&R Singapore project" />
-                    <div class="content">The Voyage</div>
+        <div class="flex-col w-full max-w-200 justify-center items-center">
+            <div class="tn bg-nordsilver/5 backdrop-blur-xs">
+                <div class="arrows">
+                    <div id="prev" class="buttons w-full h-full">chevron_left </div>
+                    <div class="item active brightness-100 shadow-xl">
+                        <img src={Project01tn.src} alt="Thumbnail for C&R Singapore project" />
+                        <div class="content">The Voyage</div>
+                    </div>
+                    <div class="item brightness-50 shadow-xl">
+                        <img src={Project02tn.src} alt="Thumbnail for Villa Ledu" />
+                        <div class="content">The Voyage</div>
+                    </div>
+                    <div class="item brightness-50 shadow-xl">
+                        <img src={Project03tn.src} alt="Amadeus' Voice of Customer" />
+                        <div class="content">The Voyage</div>
+                    </div>
+                    <div class="item brightness-50 shadow-xl">
+                        <img src={Project04.src} alt="Cytric Employer Branding" />
+                        <div class="content">The Voyage</div>
+                    </div>
+                    <div class="item brightness-50 shadow-xl">
+                        <img src={Project05tn.src} alt="Amadeus Global Report 2025" />
+                        <div class="content">The Voyage</div>
+                    </div>
+                    <div id="next"class="buttons w-full h-full">chevron_right</div>
                 </div>
-                <div class="item brightness-50 shadow-xl">
-                    <img src={Project02tn.src} alt="Thumbnail for Villa Ledu" />
-                    <div class="content">The Voyage</div>
-                </div>
-                <div class="item brightness-50 shadow-xl">
-                    <img src={Project03tn.src} alt="Amadeus' Voice of Customer" />
-                    <div class="content">The Voyage</div>
-                </div>
-                <div class="item brightness-50 shadow-xl">
-                    <img src={Project04.src} alt="Cytric Employer Branding" />
-                    <div class="content">The Voyage</div>
-                </div>
-                <div class="item brightness-50 shadow-xl">
-                    <img src={Project05tn.src} alt="Amadeus Global Report 2025" />
-                    <div class="content">The Voyage</div>
-                </div>
-            </div>
-            <div class="arrows">
-                <div id="prev" class="buttons w-full h-full">chevron_left </div>
-                <div id="next"class="buttons w-full h-full">chevron_right</div>
             </div>
         </div>
     </div>
@@ -158,7 +157,7 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
 
         thumb[itemActive].style.filter = 'brightness(100%)';
         thumb[itemActive].style.transform = 'scale(1.25)';
-        thumbActiveOld.style.filter = 'brightness(50%)';
+        thumbActiveOld.style.filter = 'brightness(80%)';
         thumbActiveOld.style.transform = 'scale(1.0)';
         /*
         clearInterval(refreshInterval);
@@ -179,9 +178,9 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
 
 <style scoped>
     .slider {
-       
+        height: 100%;
     }
-    
+
     .slider .list {
 
     }
@@ -189,14 +188,12 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
     .slider .list .item {
         position: absolute;
         inset: 0 0 0 0;
-        overflow: auto;
         opacity: 0;
         transition: 1s;
         width: 100%;
-        box-sizing: border-box;
-        top: 0;
-        height: fit-content;
-        }
+        top:0;
+        overflow: hidden;
+    }
 
     .slider .list .item img {
         width: 100%;
@@ -211,33 +208,37 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
         position: absolute;
         left: 0;
         bottom: 0;
+        z-index: 1;
         background-image: linear-gradient(
-            to top, rgb(26, 26, 50); 50%, transparent
-        );
-    }
-    
-    .slider .list .item .content-wrapper {
-        width: 100%;
-        max-width: 1200px;
+            to top, rgb(26, 26, 50), 60%, transparent);
     }
 
-    .slider .list .item .content-wrapper .content {
+    .slider .list .item.active .content-wrapper {
+
+    }
+
+    .slider .list .item .content-wrapper .content,
+    .slider .list .item.active .content-wrapper .content {
         position: absolute;
-        right: 70%;
-        top: 50px;
-        width: 20%;
+        bottom:200px;
+        right: 10%;
+        width: 50%;
+        height: fit-content;
+        max-width: 450px;
         min-width: 350px;
-        z-index: 1;
+        place-self: center;
+        z-index: 2;
     }
 
     .slider .list .item .content-wrapper .content div {
         text-transform: uppercase;
-        letter-spacing: 10px;
-        color: #DDD;
+        letter-spacing: 0.45rem;
+        padding-bottom: 55px;
+        color: var(--color-nordsilver-300);
     }
-    
+
     .slider .list .item .content-wrapper .content p {
-        font-family: "Sora";
+        font-family: "Sora", sans-serif;
         font-size: 1rem;
         color: var(--color-nordsilver);
     }
@@ -247,17 +248,17 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
         line-height: 2.8rem;
         font-weight: 100;
         margin: 0 0 20px 0;
-        color: var(--color-laspalmas);
+        color: var(--color-brightemerald);
     }
 
     .slider .list .item.active {
         opacity: 1;
-        z-index: 10;
+        z-index: 5;
     }
 
     @keyframes showContent {
         to {
-            transform: translateY(0);
+            transform: translateX(0);
             filter: blur(0);
             opacity: 1;
         }
@@ -266,30 +267,30 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
     .slider .list .item.active .content-wrapper .content p,
     .slider .list .item.active .content-wrapper .content h4,
     .slider .list .item.active .content-wrapper .content div {
-        transform: translateY(30px);
-        filter: blur(10px);
+        transform: translateX(10px);
+        filter: blur(5px);
         opacity: 0;
         animation: showContent 0.5s 0.7s ease-in-out 1 forwards;
     }
 
-   .slider .list .item.active .content-wrapper .content h4 { animation-delay: 1s;} 
-   .slider .list .item.active .content-wrapper .content p { animation-duration: 1.3s; }
+    .slider .list .item.active .content-wrapper .content h4 { animation-duration: 0.8s; }
+    .slider .list .item.active .content-wrapper .content p { animation-duration: 1.3s; }
 
-   .arrows {
-       height: fit-content;
-       width: 90%;
-       display: flex;
-       z-index: 30;
-       border: 1 solid white;
-       justify-content: space-between;
-       position: absolute;
-       bottom: 65px;
-       left: 5%;
-       padding: 0 5% 0 5%;
-       
-   }
+    .arrows {
+        height: fit-content;
+        width: 100%;
+        display: flex;
+        z-index: 10;
+        justify-content: center;
+        gap: 10px;
 
-   .arrows div.buttons {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 0;
+    }
+
+    .arrows div.buttons {
         background-color: var(--color-nordsilver);
         border: none;
         font-family: "Material Symbols Outlined";
@@ -304,56 +305,52 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0;
-        margin: 0;
+        margin: 20px -10px 0 -10px;
         transition: 0.5s;
-   }
+        z-index: 20;
+    }
 
-   .arrow .buttons:hover {
-    background-color: var(--color-brightemerald);
+    .arrows div.buttons:hover {
+    background-color: var(--color-laspalmas);
     color: var(--color-prune);
-   }
-   
-   .arrow div#prev {
-       
-   }
-   
-   .arrow div#next {
-       
-   }
+    }
 
-   .tn {
+    .arrow div#prev {
+    }
+
+    .arrow div#next {
+
+    }
+
+    .tn {
         position: absolute;
         bottom: 50px;
         left: 0;
-        z-index: 11;
+        z-index: 6;
         display: flex;
-        gap: 10px;
         width: 100%;
         min-width: 350px;
-        height: 60px;
-        
-        
+        height: 70px;
         overflow: visible;
         justify-content: center;
         align-items: center;
-   }
+    }
 
    .tn::-webkit-scrollbar {
     width: 0;
    }
 
    .tn .item {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     transition: 0.5s;
     flex-shrink: 0;
-    z-index: 11
+    z-index: 10;
    }
    
    .tn .item.active {
     transform: scale(1.25);
-    z-index: 15;
+    z-index: 5;
    }
 
    .tn .item img {
@@ -371,26 +368,30 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
     opacity: 0;
    }
 
-   @media screen and (max-width: 800px) {
-    .tn .item  { width: 65px; height: 60px; }
-    .slider .list .item .content-wrapper .content h2 { font-size: 2rem; }
-    .slider .list .item .content-wrapper { display: flex; position: relative; flex-direction: column; justify-content: start; align-items: start; }
-    .slider .list .item .content-wrapper .content { width: 80%; top: 0; display: flex; position: relative; flex-direction: column; justify-content: start; }
-    .slider .list .item .content-wrapper .content div,
-    .slider .list .item .content-wrapper .content h4,
-    .slider .list .item .content-wrapper .content p { display: flex; position: relative;}
-    .slider .list .item img { left: 50%; width:100%; transition: 0.5s; padding-bottom: 50px;}
-    .arrows { width: fit-content; left: 40%; gap: 15px; top: 10px;  }
-   }
-   
-   @media screen and (max-width: 350px) {
-    .slider .list .item { display: flex; position: relative; flex-direction: column; justify-content: start; align-items: start; }
-    .slider .list .item .content-wrapper .content { width: 100%; top: 0; display: flex; position: relative; flex-direction: column; justify-content: start; }
-    .slider .list .item .content-wrapper .content div,
-    .slider .list .item .content-wrapper .content h4,
-    .slider .list .item .content-wrapper .content p { display: flex; position: relative;}
-    .slider .list .item img { width: 50%; transition: 0.5s;}
-    .arrows div.buttons { width: fit-content; left: 40%; gap: 15px; top: 10px;  }
+
+    @media screen and (max-width: 800px) {
+
+        .slider .arrows { width: fit-content; bottom: 120px; left: 0; }
+        .tn .item { display: none;}
+
+        .tn .arrows { width: fit-content;  left: 50px; bottom:20px; gap: 40px; margin: 0;}
+
+        .slider .list .item .content-wrapper .content,
+        .slider .list .item.active .content-wrapper .content  {
+            left: 0;
+            right: unset;
+            width: 100%;
+            padding-left: 40px;
+        }
+
+
+        .slider .list .item img,
+        .slider .list .item.active img { filter: brightness(70%);}
+
+
    }
 
+   @media screen and (max-width: 350px) {
+
+   }
 </style>
