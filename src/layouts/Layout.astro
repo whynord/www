@@ -1,0 +1,182 @@
+---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/png" href="/src/images/favicon.png" />
+        <meta name="generator" content={Astro.generator} />
+        <title>NORD - Passions in brand.</title>
+    </head>
+    <body>
+        <Nav />
+        <slot />
+        <Footer />
+    </body>
+</html>
+
+<style is:global>
+
+
+    @import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Syne:wght@400..800&family=Vend+Sans:ital,wght@0,300..700;1,300..700&family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&family=Sora:wght@100..800&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Athiti:wght@200;300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+    @import "tailwindcss";
+
+    @font-face {
+      font-family: 'Material Symbols Outlined';
+      font-style: normal;
+      src: url('/src/assets/MaterialSymbolsOutlined.woff2') format('woff');
+    }
+
+    @theme {
+        --breakpoint-mobile: 350px; /* 8.5 */
+        --breakpoint-tablet: 800px; /* 200 */
+        --breakpoint-desktop: 1200px; /* 300 */
+
+        /*COLOR PALETTE*/
+
+
+        --color-nordsilver: #BDC5C7;
+        --color-nordsilver-50: #eff1f2;
+        --color-nordsilver-100: #dae0e1;
+        --color-nordsilver-200: #bdc5c7;
+        --color-nordsilver-300: #adb5b6;
+        --color-nordsilver-400: #989ea0;
+        --color-nordsilver-500: #808687;
+        --color-nordsilver-600: #676c6d;
+        --color-nordsilver-700: #4e5252;
+        --color-nordsilver-800: #353738;
+        --color-nordsilver-900: #1c1e1e;
+        --color-nordsilver-950: #101111;
+
+        /* COLOR PALETTE 2026 */
+        --color-brightemerald: rgb(0, 211, 127);
+        --color-sherpasblue: rgb(1, 71, 81);
+        --color-laspalmas: rgb(198, 242, 33);
+        --color-crispypink: rgb(255, 196, 212);
+        --color-prune: rgb(26, 26, 50);
+        --color-pastellime: rgb(211, 255, 180);
+
+
+        --font-bodonimoda: "Bodoni Moda", serif;
+        --font-inclusivesans: "Inclusive Sans", sans-serif;
+        --font-sora: "Sora", sans-serif;
+        --font-hostgrotesk: "Host Grotesk", sans-serif;
+        --font-syne: "Syne", sans-serif;
+        --font-funneldisplay: "Funnel Display", sans-serif;
+        --font-vendsans: "Vend Sans", sans-serif;
+        --font-athiti: "Athiti", sans-serif;
+        --font-spacemono: "SUSE Mono", monospace;
+        --font-googlemdi: "Material Symbols Outlined";
+    }
+
+    html,
+    body {
+        max-width: 100vw;
+        max-height: 100vh;
+        min-width: 350px;
+        width: 100dvw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        scroll-behavior: smooth;
+        margin: 0 auto;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: var(--color-prune);
+    }
+
+    h1 {
+        font-size: 5em;
+        line-height: 1.1;
+        letter-spacing: 0.002em;
+    }
+
+    h2 {
+
+        font-size: 4em;
+        line-height: 1.1;
+    }
+
+    h3 {
+
+        font-size: 3em;
+        line-height: 1.1;
+    }
+
+    h4 {
+        font-size: 2em;
+        line-height: 1.2;
+        font-weight: 100;
+    }
+
+    h5 {
+        font-size: 1.5em;
+    }
+
+    a,
+    a:link,
+    a:visited,
+    a:active {
+        filter: brightness(1);
+    }
+
+    a:hover {
+        filter: brightness(1.5);
+    }
+
+    @keyframes blink {
+        from,
+        to {
+            opacity: 1;
+        }
+        70% {
+            opacity: 0;
+        }
+    }
+
+    .logo {
+        width: 120px;
+    }
+
+    .material-symbols-outlined {
+        font-variation-settings:
+            "FILL" 0,
+            "wght" 200,
+            "GRAD" 0,
+            "opsz" 24;
+    }
+
+    .googlemdi {
+        font-family: "Material Symbols Outlined";
+        font-size: 2.6rem;
+        vertical-align: middle;
+        line-height: 1em;
+        font-variation-settings:
+            "FILL" 0,
+            "wght" 200,
+            "GRAD" 0,
+            "opsz" 48;
+    }
+
+    .googlemdi-sm {
+        font-family: "Material Symbols Outlined";
+        font-size: 2rem;
+        font-variation-settings:
+            "FILL" 0,
+            "wght" 100,
+            "GRAD" 0,
+            "opsz" 48;
+    }
+
+
+
+
+
+</style>

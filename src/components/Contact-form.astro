@@ -1,0 +1,94 @@
+---
+
+---
+<div class="flex flex-col w-full h-fit items-center bg-prune/90 shadow-2xl backdrop-saturate-0 text-gray-200 z-1 py-30 px-10">
+
+    <div class="flex flex-col max-w-300 w-fit h-fit desktop:flex-row">
+
+        <div class="flex flex-col w-full h-fit mb-10">
+            <h3 class="text-laspalmas font-sora">Yeah,</h3>
+            <h4 class="text-brightemerald font-sora">we're getting closer!</h4>
+            <p class="text-nordsilver font-vendsans/3 mt-5">For any questions, doubts, antics, doubts you may have, drop you message over there on the right and I'll see to it right away (when I'm not sleeping.)</p>
+        </div>
+        <div
+            class="flex flex-col w-full desktop:px-20 desktop:ml-10 h-fit backdrop-blur-xs backdrop-brightness-60 outline-5 outline-prune/70 border-nordsilver/50 border shadow-xl/30 rounded-xl justify-center items-center text-nordsilver px-10 py-10"
+        >
+            <div class="flex flex-col w-full h-fit block gap-10 font-sora text-md">
+                <form action="https://formspree.io/f/maqqooqv" method="POST">
+                    <label>
+                        Your email:
+                        <input type="email" name="email">
+                    </label>
+                    <label>
+                        Your message:
+                        <textarea name="message"></textarea>
+                    </label>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const observerOptions = {
+        threshold: 0.2, // Trigger when 10% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                // When it comes into view, remove the "hidden" classes
+                entry.target.classList.remove("opacity-0", "translate-y-10");
+                entry.target.classList.add("opacity-100", "translate-y-0");
+            }
+        });
+    }, observerOptions);
+
+    // Tell the observer to watch every element with the "reveal" class
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+</script>
+
+<style scoped>
+    input,
+    input:focus,
+    textarea,
+    textarea:focus,
+    button {
+        outline-color: var(--color-prune);
+        outline-width: 2px;
+
+        border-bottom: 1px solid var(--color-brightemerald);
+        padding: 15px;
+
+        background-color: transparent;
+
+        color: var(--color-brightemerald);
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    textarea {
+        height: 200px;
+    }
+
+    input:focus,
+    textarea:focus {
+        border: 0;
+        outline: 0;
+    }
+
+    button {
+        width: fit-content;
+        align-self: center;
+        background-color: var(--color-brightemerald);
+        padding: 10px 20px 10px 20px;
+        border-radius: 15px;
+        color: var(--color-sherpasblue);
+    }
+
+    button::after {
+        background-color: var(--color-pastellime);
+    }
+</style>

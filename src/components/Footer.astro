@@ -1,0 +1,57 @@
+---
+import NordLogo from "../images/NORD-Logo-2026-Primary.png";
+import Pug from "../images/AUX-pug-by-anu-priyapng.png";
+---
+<div class="flex w-full h-fit shadow-xl backdrop-brightness-20 bg-prune/80 backdrop-saturate-0 justify-center">
+    <div class="flex flex-col w-full max-w-400 px-10 pt-30 pb-10 tablet:flex-row tablet:justify-around tablet:items-end items-start gap-5 text-nordsilver">
+
+        <div class="flex tablet:w-7/10 w-full h-fit">
+            <div class="flex flex-col w-full justify-start items-start text-gray-300">
+                <div class="hidden invisible">
+                    <img src={NordLogo.src} class="w-[100px] h-auto mb-2" />
+                </div>
+                <div class="flex flex-col gap-2">
+                    <p class="text-laspalmas font-bold">
+                        Copyright by Panpong Varavarn
+                    </p>
+                    <p class="font-regular">
+                        Images used in homepage's key visual are created by Nick
+                        Fancher <br />and the pug on the right is created by
+                        <a href="https://unsplash.com/@nibkromos/illustrations"
+                            >Anu Priya.</a
+                        >
+                    </p>
+                    <p class="font-regular">Find them on <a>Unsplash.com</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex tablet:w-3/10 w-full h-fit mt-5">
+            <div class="flex flex-col w-full h-fit justify-end items-start text-gray-300 gap-2">
+                <p>
+                    Handcrafted with love based on
+                    <a href="https://astro.build/">Astro</a>
+                    + <a href="https://tailwindcss.com/">Tailwind CSS</a> + Javascript and using Webstorm on Linux AnduinOS.
+                </p>
+                <p>
+                    Also big thanks for <a href="https://gemini.google.com/">Gemini</a><br />
+                    for guiding through this steep curve.
+                </p>
+                <p>Finally, miss you, Tank & Khaohomm.</p>
+            </div>
+        </div>
+
+        <img src={Pug.src} class="w-25 min-h-[100px]max-w-[120px] h-auto p-0 m-0 justify-end" />
+
+    </div>
+</div>
+
+<style scoped>
+    p {
+        font-family: "Sora", sans-serif;
+        font-size: 0.7rem;
+    }
+    a {
+        color: #d2d8e6;
+    }
+</style>

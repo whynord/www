@@ -1,0 +1,315 @@
+---
+import Project01 from "../images/showcase/1-M-CnR03.png";
+import Project01tn from "../images/showcase/1-TN-CnR.png";
+import Project02 from "../images/showcase/2-M-VillaLedu02.png";
+import Project02tn from "../images/showcase/2-TN-VillaLedu.png";
+---
+
+<div class="w-screen h-full flex flex-col items-center">
+
+    <div class="slider w-full min-h-dvh h-fit min-h-7/10 relative items-center justify-center">
+
+        <div class="list text-sherpasblueq font-funneldisplay items-center justify-center">
+    
+            <div class="item active">
+                <img src={Project01.src} alt="Brand Development project for C&R Singapore" />
+                <div class="content">
+                    <div class="h-fit font-funneldisplay font-bold tracking-[0.3em] uppercase text-xs text-left pb-2">
+                        Selected Works
+                    </div>
+                    <h4>C&R Furnitures</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est eum deleniti minima dolore vitae voluptatibus omnis quisquam aut debitis libero doloribus porro reiciendis perferendis quae, modi corporis distinctio veniam corrupti?</p>
+                </div>
+            </div>
+    
+            <div class="item">
+                <img src={Project02.src} alt="Brand development fro Villa Ledu in Samui, Thailand" />
+                <div class="content">
+                    <div class="h-fit font-funneldisplay font-bold tracking-[0.3em] uppercase text-xs text-left pb-2">
+                        Selected Works
+                    </div>
+                    <h4>Villa Ledu</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est eum deleniti minima dolore vitae voluptatibus omnis quisquam aut debitis libero doloribus porro reiciendis perferendis quae, modi corporis distinctio veniam corrupti?</p>
+                </div>
+            </div>  
+
+        </div>
+        
+        <div class="flex flex-col w-full max-w-200 justify-center items-center">
+            <div class="tn bg-pastellime/5 backdrop-blur-xs hidden invisible tablet:flex tablet:visible">
+                <div class="item active brightness-100">
+                    <img src={Project01tn.src} alt="Thumbnail for C&R Singapore project" />
+                    <div class="content">The Voyage</div>
+                </div>
+                <div class="item brightness-50">
+                    <img src={Project02tn.src} alt="Thumbnail for Villa Ledu" />
+                    <div class="content">The Voyage</div>
+                </div>
+            </div>
+            <div class="arrows">
+                <div id="prev" class="buttons w-full h-full">chevron_left </div>
+                <div id="next"class="buttons w-full h-full">chevron_right</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+    let items = document.querySelectorAll('.slider .list .item');
+    let next = document.getElementById('next');
+    let prev = document.getElementById('prev');
+    let thumb = document.querySelectorAll('.tn .item');
+
+    let countItem = items.length;
+    let itemActive = 0;
+
+
+    next.onclick = function() {
+        itemActive = itemActive + 1;
+        if (itemActive >= countItem) {
+            itemActive = 0;
+        }
+        showSlider();
+    }
+
+    prev.onclick = function() {
+        itemActive = itemActive - 1;
+        if (itemActive < 0) {
+            itemActive = countItem - 1;
+        }
+        showSlider();
+    }
+
+    /*
+    let refreshInterval = setInterval(() => {
+      next.click();
+    }, 3000);
+    */
+
+    function showSlider() {
+        let itemActiveOld = document.querySelector('.slider .list .item.active');
+        let thumbActiveOld = document.querySelector('.tn .item.active');
+
+        itemActiveOld.classList.remove('active');
+        thumbActiveOld.classList.remove('active');
+        items[itemActive].classList.add('active');
+        thumb[itemActive].classList.add('active');
+
+        thumb[itemActive].style.filter = 'brightness(100%)';
+        thumb[itemActive].style.transform = 'scale(1.25)';
+        thumbActiveOld.style.filter = 'brightness(50%)';
+        thumbActiveOld.style.transform = 'scale(1.0)';
+        /*
+        clearInterval(refreshInterval);
+        refreshInterval = setInterval(() => {
+          next.click();
+        }, 3000);
+        */
+    }
+
+    thumb.forEach((thumb, index) => {
+        thumb.addEventListener('click', () => {
+            itemActive = index;
+            showSlider();
+        });
+    });
+
+</script>
+
+<style scoped>
+    .slider {
+
+    }
+    
+    .slider .list {
+
+    }
+
+    .slider .list .item {
+        position: absolute;
+        inset: 0 0 0 0;
+        overflow: auto;
+        opacity: 0;
+        transition: 1s;
+        }
+
+    .slider .list .item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .slider .list .item::after {
+        content: "";
+        widht: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-image: linear-gradient(
+            to top, #000 40%, transparent
+        );
+    }
+
+    .slider .list .item .content {
+        position: absolute;
+        left: 50px;
+        top: 10%;
+        width: 500px;
+
+        z-index: 1;
+
+    }
+
+    .slider .list .item .content p:nth-child(1) {
+        text-transform: uppercase;
+        letter-spacing: 10px;
+    }
+    
+    .slider .list .item .content p {
+        font-family: "Sora";
+        font-size: 1rem;
+    }
+
+    .slider .list .item .content h4 {
+        font-size: 3rem;
+        font-weight: 100;
+        margin: 0 0 20px 0;
+    }
+
+    .slider .list .item.active {
+        opacity: 1;
+        z-index: 10;
+    }
+
+    @keyframes showContent {
+        to {
+            transform: translateY(0);
+            filter: blur(0);
+            opacity: 1;
+        }
+    }
+
+    .slider .list .item.active p:nth-child(1),
+    .slider .list .item.active h2,
+    .slider .list .item.active p:nth-child(3) {
+        transform: translateY(30px);
+        filter: blur(20px);
+        opacity: 0;
+        animation: showContent 0.5s 0.7s ease-in-out 1 forwards;
+    }
+
+   .slider .list .item.active h2, { animation-delay: 1s;} 
+   .slider .list .item.active p:nth-child(3) { animation-duration: 1.3s; }
+
+   .arrows {
+       height: fit-content;
+       width: 100%;
+       display: flex;
+       z-index: 30;
+       border: 1 solid white;
+       justify-content: space-between;
+       position: absolute;
+       bottom: 230px;
+       left: 0;
+       padding: 0 5% 0 5%;
+       
+   }
+
+   .arrows div.buttons {
+        background-color: var(--color-nordsilver);
+        border: none;
+        font-family: "Material Symbols Outlined";
+        font-size: 1.5rem;
+        font-weight: 600;
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+        color: var(--color-sherpasblue);
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        
+        transition: 0.5s;
+   }
+
+   .arrow div:hover {
+    background-color: var(--color-brightemerald);
+    color: var(--color-prune);
+   }
+   
+   .arrow div#prev {
+       
+   }
+   
+   .arrow div#next {
+       
+   }
+   
+
+   .tn {
+    position: absolute;
+    bottom: 150px;
+    left: 0;
+    z-index: 11;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    min-width: 350px;
+    height: 200px;
+    
+
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+   }
+
+   .tn::-webkit-scrollbar {
+    width: 0;
+   }
+
+   .tn .item {
+    width: 10%;
+    height: 130px;
+    transition: 0.5s;
+    flex-shrink: 0;
+    box-shadow: 0 rgba(0, 0, 0, 0);
+    z-index: 11
+   }
+   
+   .tn .item.active {
+    transform: scale(1.25);
+    z-index: 15;
+   }
+
+   .tn .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+   }
+   
+
+   .tn .item .content {
+    position: absolute;
+    inset: auto 10px 10px 10px;
+    color: var(--color-pastellime);
+    opacity: 0;
+   }
+
+   @media screen and (max-width: 800px) {
+    .tn .item  { width: 65px; height: 60px; }
+    .slider .list .item .content h2 { font-size: 2rem; }
+    .slider .list .item .content { width: 420px; top: 100px; }
+    .arrows { width: fit-content; left: 40%; gap: 15px;  }
+
+   }
+
+</style>
