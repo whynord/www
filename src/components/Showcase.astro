@@ -12,9 +12,9 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
 
 <div class="w-screen h-full flex flex-col items-start justify-start">
 
-    <div class="slider w-full h-full relative items-start justify-start">
+    <div class="slider flex w-full h-full relative items-start justify-start">
 
-        <div class="list w-full h-full flex flex-col font-sora">
+        <div class="list flex w-full h-full flex flex-col font-sora">
     
             <div class="item active">
                 <img src={Project01.src} alt="Brand Development project for C&R Singapore" />
@@ -195,6 +195,7 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
         width: 100%;
         box-sizing: border-box;
         top: 0;
+        height: fit-content;
         }
 
     .slider .list .item img {
@@ -225,6 +226,7 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
         right: 70%;
         top: 50px;
         width: 20%;
+        min-width: 350px;
         z-index: 1;
     }
 
