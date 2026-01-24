@@ -12,9 +12,9 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
 
 <div class="w-screen h-full flex flex-col items-start justify-start">
 
-    <div class="slider w-full min-h-dvh h-fit min-h-6/10 relative items-start justify-start">
+    <div class="slider w-full h-full relative items-start justify-start">
 
-        <div class="list w-full flex flex-colfont-sora items-start justify-start">
+        <div class="list w-full h-full flex flex-col font-sora">
     
             <div class="item active">
                 <img src={Project01.src} alt="Brand Development project for C&R Singapore" />
@@ -183,7 +183,7 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
     }
     
     .slider .list {
-        width: 100%;
+
     }
 
     .slider .list .item {
@@ -193,8 +193,8 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
         opacity: 0;
         transition: 1s;
         width: 100%;
-        max-width: 1600px;
-        place-self: center;
+        box-sizing: border-box;
+        top: 0;
         }
 
     .slider .list .item img {
@@ -211,21 +211,20 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
         left: 0;
         bottom: 0;
         background-image: linear-gradient(
-            to top, #000 5%, transparent
+            to top, rgb(26, 26, 50); 50%, transparent
         );
     }
     
     .slider .list .item .content-wrapper {
-        display:flex;
-        flex-direction: column;
+        width: 100%;
         max-width: 1200px;
     }
 
     .slider .list .item .content-wrapper .content {
         position: absolute;
-        left: 50px;
+        right: 70%;
         top: 50px;
-        width: 350px;
+        width: 20%;
         z-index: 1;
     }
 
@@ -246,7 +245,7 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
         line-height: 2.8rem;
         font-weight: 100;
         margin: 0 0 20px 0;
-        color: var(--color-brightemerald);
+        color: var(--color-laspalmas);
     }
 
     .slider .list .item.active {
@@ -282,7 +281,7 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
        border: 1 solid white;
        justify-content: space-between;
        position: absolute;
-       bottom: 180px;
+       bottom: 65px;
        left: 5%;
        padding: 0 5% 0 5%;
        
@@ -323,14 +322,14 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
 
    .tn {
         position: absolute;
-        bottom: 150px;
+        bottom: 50px;
         left: 0;
         z-index: 11;
         display: flex;
-        gap: 5px;
+        gap: 10px;
         width: 100%;
         min-width: 350px;
-        height: 90px;
+        height: 60px;
         
         
         overflow: visible;
@@ -343,8 +342,8 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
    }
 
    .tn .item {
-    width: 90px;
-    height: 90px;
+    width: 50px;
+    height: 50px;
     transition: 0.5s;
     flex-shrink: 0;
     z-index: 11
