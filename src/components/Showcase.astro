@@ -1,29 +1,37 @@
 ---
-import Project01 from "../images/showcase/1-M-CnR03.png";
+import Project01 from "../images/showcase/1-M-CnR04.png";
 import Project01tn from "../images/showcase/1-TN-CnR.png";
-import Project02 from "../images/showcase/2-M-VillaLedu02.png";
+import Project02 from "../images/showcase/2-M-VillaLedu05.png";
 import Project02tn from "../images/showcase/2-TN-VillaLedu.png";
+import Project03 from "../images/showcase/3-M-AmadeusVoC3.jpg";
+import Project03tn from "../images/showcase/3-TN-AmadeusVoC.png";
+import Project04 from "../images/showcase/4-M-RenewTravel.png";
+import Project05 from "../images/showcase/5-M-GlobalReport2025.png";
+import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
 ---
 
-<div class="w-screen h-full flex flex-col items-center">
+<div class="w-screen h-full flex flex-col items-start justify-start">
 
-    <div class="slider w-full min-h-dvh h-fit min-h-7/10 relative items-center justify-center">
+    <div class="slider w-full min-h-dvh h-fit min-h-7/10 relative items-start justify-start">
 
-        <div class="list text-sherpasblueq font-funneldisplay items-center justify-center">
+        <div class="list flex flex-colfont-sora items-start justify-start">
     
             <div class="item active">
                 <img src={Project01.src} alt="Brand Development project for C&R Singapore" />
-                <div class="content">
-                    <div class="h-fit font-funneldisplay font-bold tracking-[0.3em] uppercase text-xs text-left pb-2">
-                        Selected Works
+                <div class="content-wrapper w-full h-fit max-w-400">
+                    <div class="content">
+                        <div class="h-fit font-funneldisplay font-bold tracking-[0.3em] uppercase text-xs text-left pb-2">
+                            Selected Works
+                        </div>
+                        <h4>C&R Furnitures</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est eum deleniti minima dolore vitae voluptatibus omnis quisquam aut debitis libero doloribus porro reiciendis perferendis quae, modi corporis distinctio veniam corrupti?</p>
                     </div>
-                    <h4>C&R Furnitures</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est eum deleniti minima dolore vitae voluptatibus omnis quisquam aut debitis libero doloribus porro reiciendis perferendis quae, modi corporis distinctio veniam corrupti?</p>
                 </div>
             </div>
     
             <div class="item">
                 <img src={Project02.src} alt="Brand development fro Villa Ledu in Samui, Thailand" />
+                <div class="content-wrapper w-full h-fit max-w-400">
                 <div class="content">
                     <div class="h-fit font-funneldisplay font-bold tracking-[0.3em] uppercase text-xs text-left pb-2">
                         Selected Works
@@ -31,18 +39,70 @@ import Project02tn from "../images/showcase/2-TN-VillaLedu.png";
                     <h4>Villa Ledu</h4>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est eum deleniti minima dolore vitae voluptatibus omnis quisquam aut debitis libero doloribus porro reiciendis perferendis quae, modi corporis distinctio veniam corrupti?</p>
                 </div>
-            </div>  
+                </div>
+            </div>
+            
+            <div class="item">
+                <img src={Project03.src} alt="Brand development fro Villa Ledu in Samui, Thailand" />
+                <div class="content-wrapper w-full h-fit max-w-400">
+                <div class="content">
+                    <div class="h-fit font-funneldisplay font-bold tracking-[0.3em] uppercase text-xs text-left pb-2">
+                        Selected Works
+                    </div>
+                    <h4>Voice of Customer</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est eum deleniti minima dolore vitae voluptatibus omnis quisquam aut debitis libero doloribus porro reiciendis perferendis quae, modi corporis distinctio veniam corrupti?</p>
+                </div>
+                </div>
+            </div>
+            
+            <div class="item">
+                <img src={Project04.src} alt="Brand development fro Villa Ledu in Samui, Thailand" />
+                <div class="content-wrapper w-full h-fit max-w-400">
+                <div class="content">
+                    <div class="h-fit font-funneldisplay font-bold tracking-[0.3em] uppercase text-xs text-left pb-2">
+                        Selected Works
+                    </div>
+                    <h4>Renew Travel</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est eum deleniti minima dolore vitae voluptatibus omnis quisquam aut debitis libero doloribus porro reiciendis perferendis quae, modi corporis distinctio veniam corrupti?</p>
+                </div>
+                </div>
+            </div>
+            
+            <div class="item">
+                <img src={Project05.src} alt="Brand development fro Villa Ledu in Samui, Thailand" />
+                <div class="content-wrapper w-full h-fit max-w-400">
+                    <div class="content">
+                        <div class="h-fit font-funneldisplay font-bold tracking-[0.3em] uppercase text-xs text-left pb-2">
+                            Selected Works
+                        </div>
+                        <h4>Amadeus Global Report 2025</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est eum deleniti minima dolore vitae voluptatibus omnis quisquam aut debitis libero doloribus porro reiciendis perferendis quae, modi corporis distinctio veniam corrupti?</p>
+                    </div>
+                </div>
+            </div>
 
         </div>
         
         <div class="flex flex-col w-full max-w-200 justify-center items-center">
-            <div class="tn bg-pastellime/5 backdrop-blur-xs hidden invisible tablet:flex tablet:visible">
-                <div class="item active brightness-100">
+            <div class="tn bg-nordsilver/5 backdrop-blur-xs hidden invisible tablet:flex tablet:visible">
+                <div class="item active brightness-100 shadow-xl">
                     <img src={Project01tn.src} alt="Thumbnail for C&R Singapore project" />
                     <div class="content">The Voyage</div>
                 </div>
-                <div class="item brightness-50">
+                <div class="item brightness-50 shadow-xl">
                     <img src={Project02tn.src} alt="Thumbnail for Villa Ledu" />
+                    <div class="content">The Voyage</div>
+                </div>
+                <div class="item brightness-50 shadow-xl">
+                    <img src={Project03tn.src} alt="Amadeus' Voice of Customer" />
+                    <div class="content">The Voyage</div>
+                </div>
+                <div class="item brightness-50 shadow-xl">
+                    <img src={Project04.src} alt="Cytric Employer Branding" />
+                    <div class="content">The Voyage</div>
+                </div>
+                <div class="item brightness-50 shadow-xl">
+                    <img src={Project05tn.src} alt="Amadeus Global Report 2025" />
                     <div class="content">The Voyage</div>
                 </div>
             </div>
@@ -120,7 +180,7 @@ import Project02tn from "../images/showcase/2-TN-VillaLedu.png";
 
 <style scoped>
     .slider {
-
+       
     }
     
     .slider .list {
@@ -133,6 +193,9 @@ import Project02tn from "../images/showcase/2-TN-VillaLedu.png";
         overflow: auto;
         opacity: 0;
         transition: 1s;
+        width: 100%;
+        max-width: 1600px;
+        place-self: center;
         }
 
     .slider .list .item img {
@@ -143,7 +206,7 @@ import Project02tn from "../images/showcase/2-TN-VillaLedu.png";
 
     .slider .list .item::after {
         content: "";
-        widht: 100%;
+        width: 100%;
         height: 100%;
         position: absolute;
         left: 0;
@@ -153,30 +216,34 @@ import Project02tn from "../images/showcase/2-TN-VillaLedu.png";
         );
     }
 
-    .slider .list .item .content {
+    .slider .list .item .content-wrapper .content {
         position: absolute;
         left: 50px;
-        top: 10%;
-        width: 500px;
+        top: 50px;
+        width: 350px;
 
         z-index: 1;
 
     }
 
-    .slider .list .item .content p:nth-child(1) {
+    .slider .list .item .content-wrapper .content div {
         text-transform: uppercase;
         letter-spacing: 10px;
+        color: #DDD;
     }
     
-    .slider .list .item .content p {
+    .slider .list .item .content-wrapper .content p {
         font-family: "Sora";
         font-size: 1rem;
+        color: var(--color-nordsilver);
     }
 
-    .slider .list .item .content h4 {
+    .slider .list .item .content-wrapper .content h4 {
         font-size: 3rem;
+        line-height: 2.8rem;
         font-weight: 100;
         margin: 0 0 20px 0;
+        color: var(--color-brightemerald);
     }
 
     .slider .list .item.active {
@@ -192,28 +259,28 @@ import Project02tn from "../images/showcase/2-TN-VillaLedu.png";
         }
     }
 
-    .slider .list .item.active p:nth-child(1),
-    .slider .list .item.active h2,
-    .slider .list .item.active p:nth-child(3) {
+    .slider .list .item.active .content-wrapper .content p,
+    .slider .list .item.active .content-wrapper .content h4,
+    .slider .list .item.active .content-wrapper .content div {
         transform: translateY(30px);
-        filter: blur(20px);
+        filter: blur(10px);
         opacity: 0;
         animation: showContent 0.5s 0.7s ease-in-out 1 forwards;
     }
 
-   .slider .list .item.active h2, { animation-delay: 1s;} 
-   .slider .list .item.active p:nth-child(3) { animation-duration: 1.3s; }
+   .slider .list .item.active .content-wrapper .content h4 { animation-delay: 1s;} 
+   .slider .list .item.active .content-wrapper .content p { animation-duration: 1.3s; }
 
    .arrows {
        height: fit-content;
-       width: 100%;
+       width: 90%;
        display: flex;
        z-index: 30;
        border: 1 solid white;
        justify-content: space-between;
        position: absolute;
-       bottom: 230px;
-       left: 0;
+       bottom: 180px;
+       left: 5%;
        padding: 0 5% 0 5%;
        
    }
@@ -240,7 +307,7 @@ import Project02tn from "../images/showcase/2-TN-VillaLedu.png";
         transition: 0.5s;
    }
 
-   .arrow div:hover {
+   .arrow .buttons:hover {
     background-color: var(--color-brightemerald);
     color: var(--color-prune);
    }
@@ -255,20 +322,20 @@ import Project02tn from "../images/showcase/2-TN-VillaLedu.png";
    
 
    .tn {
-    position: absolute;
-    bottom: 150px;
-    left: 0;
-    z-index: 11;
-    display: flex;
-    gap: 10px;
-    width: 100%;
-    min-width: 350px;
-    height: 200px;
-    
-
-    overflow: auto;
-    justify-content: center;
-    align-items: center;
+        position: absolute;
+        bottom: 150px;
+        left: 0;
+        z-index: 11;
+        display: flex;
+        gap: 5px;
+        width: 100%;
+        min-width: 350px;
+        height: 90px;
+        
+        
+        overflow: visible;
+        justify-content: center;
+        align-items: center;
    }
 
    .tn::-webkit-scrollbar {
@@ -276,11 +343,10 @@ import Project02tn from "../images/showcase/2-TN-VillaLedu.png";
    }
 
    .tn .item {
-    width: 10%;
-    height: 130px;
+    width: 90px;
+    height: 90px;
     transition: 0.5s;
     flex-shrink: 0;
-    box-shadow: 0 rgba(0, 0, 0, 0);
     z-index: 11
    }
    
@@ -306,10 +372,24 @@ import Project02tn from "../images/showcase/2-TN-VillaLedu.png";
 
    @media screen and (max-width: 800px) {
     .tn .item  { width: 65px; height: 60px; }
-    .slider .list .item .content h2 { font-size: 2rem; }
-    .slider .list .item .content { width: 420px; top: 100px; }
-    .arrows { width: fit-content; left: 40%; gap: 15px;  }
-
+    .slider .list .item .content-wrapper .content h2 { font-size: 2rem; }
+    .slider .list .item .content-wrapper { display: flex; position: relative; flex-direction: column; justify-content: start; align-items: start; }
+    .slider .list .item .content-wrapper .content { width: 80%; top: 0; display: flex; position: relative; flex-direction: column; justify-content: start; }
+    .slider .list .item .content-wrapper .content div,
+    .slider .list .item .content-wrapper .content h4,
+    .slider .list .item .content-wrapper .content p { display: flex; position: relative;}
+    .slider .list .item img { left: 50%; width:100%; transition: 0.5s; padding-bottom: 50px;}
+    .arrows { width: fit-content; left: 40%; gap: 15px; top: 10px;  }
+   }
+   
+   @media screen and (max-width: 350px) {
+    .slider .list .item { display: flex; position: relative; flex-direction: column; justify-content: start; align-items: start; }
+    .slider .list .item .content-wrapper .content { width: 100%; top: 0; display: flex; position: relative; flex-direction: column; justify-content: start; }
+    .slider .list .item .content-wrapper .content div,
+    .slider .list .item .content-wrapper .content h4,
+    .slider .list .item .content-wrapper .content p { display: flex; position: relative;}
+    .slider .list .item img { width: 50%; transition: 0.5s;}
+    .arrows div.buttons { width: fit-content; left: 40%; gap: 15px; top: 10px;  }
    }
 
 </style>
