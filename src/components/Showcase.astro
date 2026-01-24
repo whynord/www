@@ -12,13 +12,13 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
 
 <div class="w-screen h-full flex flex-col items-start justify-start">
 
-    <div class="slider w-full min-h-dvh h-fit min-h-7/10 relative items-start justify-start">
+    <div class="slider w-full min-h-dvh h-fit min-h-6/10 relative items-start justify-start">
 
-        <div class="list flex flex-colfont-sora items-start justify-start">
+        <div class="list w-full flex flex-colfont-sora items-start justify-start">
     
             <div class="item active">
                 <img src={Project01.src} alt="Brand Development project for C&R Singapore" />
-                <div class="content-wrapper w-full h-fit max-w-400">
+                <div class="content-wrapper w-full h-fit">
                     <div class="content">
                         <div class="h-fit font-funneldisplay font-bold tracking-[0.3em] uppercase text-xs text-left pb-2">
                             Selected Works
@@ -31,7 +31,7 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
     
             <div class="item">
                 <img src={Project02.src} alt="Brand development fro Villa Ledu in Samui, Thailand" />
-                <div class="content-wrapper w-full h-fit max-w-400">
+                <div class="content-wrapper w-full h-fit">
                 <div class="content">
                     <div class="h-fit font-funneldisplay font-bold tracking-[0.3em] uppercase text-xs text-left pb-2">
                         Selected Works
@@ -44,7 +44,7 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
             
             <div class="item">
                 <img src={Project03.src} alt="Brand development fro Villa Ledu in Samui, Thailand" />
-                <div class="content-wrapper w-full h-fit max-w-400">
+                <div class="content-wrapper w-full h-fit">
                 <div class="content">
                     <div class="h-fit font-funneldisplay font-bold tracking-[0.3em] uppercase text-xs text-left pb-2">
                         Selected Works
@@ -57,7 +57,7 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
             
             <div class="item">
                 <img src={Project04.src} alt="Brand development fro Villa Ledu in Samui, Thailand" />
-                <div class="content-wrapper w-full h-fit max-w-400">
+                <div class="content-wrapper w-full h-fit">
                 <div class="content">
                     <div class="h-fit font-funneldisplay font-bold tracking-[0.3em] uppercase text-xs text-left pb-2">
                         Selected Works
@@ -70,7 +70,7 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
             
             <div class="item">
                 <img src={Project05.src} alt="Brand development fro Villa Ledu in Samui, Thailand" />
-                <div class="content-wrapper w-full h-fit max-w-400">
+                <div class="content-wrapper w-full h-fit">
                     <div class="content">
                         <div class="h-fit font-funneldisplay font-bold tracking-[0.3em] uppercase text-xs text-left pb-2">
                             Selected Works
@@ -115,7 +115,6 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
 </div>
 
 <script>
-
 
     let items = document.querySelectorAll('.slider .list .item');
     let next = document.getElementById('next');
@@ -184,7 +183,7 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
     }
     
     .slider .list {
-
+        width: 100%;
     }
 
     .slider .list .item {
@@ -212,8 +211,14 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
         left: 0;
         bottom: 0;
         background-image: linear-gradient(
-            to top, #000 40%, transparent
+            to top, #000 5%, transparent
         );
+    }
+    
+    .slider .list .item .content-wrapper {
+        display:flex;
+        flex-direction: column;
+        max-width: 1200px;
     }
 
     .slider .list .item .content-wrapper .content {
@@ -221,9 +226,7 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
         left: 50px;
         top: 50px;
         width: 350px;
-
         z-index: 1;
-
     }
 
     .slider .list .item .content-wrapper .content div {
@@ -297,13 +300,11 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
         color: var(--color-sherpasblue);
         cursor: pointer;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 0;
         margin: 0;
-        
         transition: 0.5s;
    }
 
@@ -319,7 +320,6 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
    .arrow div#next {
        
    }
-   
 
    .tn {
         position: absolute;
