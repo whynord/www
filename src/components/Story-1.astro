@@ -5,15 +5,13 @@ import imgKV from "../images/showcase/1-X-CnR-iPadMockup.png";
 import imgAux02 from "../images/showcase/1-X-CnR-PosterMockup.png";
 ---
 
-<div class="flex flex-col relative w-full h-fit items-center justify-start bg-nordsilver-900">
+<div class="flex flex-col relative w-full h-fit items-center justify-start">
 
     <div class="flex w-full h-[60dvh] overflow-hidden bg-[url('../images/showcase/1-X-CnR-iPadMockup.png')] bg-cover bg-fixed bg-center">
         <div class="fadedbtm"></div>
     </div>
-    <div class="flex flex-col desktop:flex-row w-full h-fit items-start justify-start desktop:justify-between desktop:items-start text-nordsilver max-w-400 px-10 pt-30 pb-50">
-        <div class="flex w-80 min-w-80 h-fit font-funneldisplay font-bold tracking-[0.3em] uppercase text-xs text-left text-pastellime">
-        </div>
-        <div class="flex flex-col w-full h-fit desktop:max-w-6/9 text-nordsilver gap-5">
+    <div class="flex flex-col desktop:flex-row w-full h-fit items-start justify-start desktop:justify-end desktop:items-start text-nordsilver max-w-400 px-10 pt-30 pb-50">
+        <div class="flex flex-col w-full h-fit desktop:max-w-6/9 text-nordsilver">
             <div class="flex w-80 min-w-80 h-fit font-funneldisplay font-bold tracking-[0.3em] uppercase text-xs text-left text-pastellime pb-10">
                 FEATURED PROJECTS
             </div>
@@ -21,7 +19,7 @@ import imgAux02 from "../images/showcase/1-X-CnR-PosterMockup.png";
                 As the business grows, some of the initially well-designed mechanics reveals their elusive limitations.
                 <h1>This is a natural cycle in the evolution and development of a company's brand. With the addition of more business units, departments, and activities, our current structure is struggling to keep up with these changes. It's imperative that we address this issue to ensure the company remains competitive.</h1>
             </div>
-            <div class="para-normal">
+            <div class="para-normal mb-8">
                 <div>
                     It's apparent that our products and services need a cohesive brand to help organize and ultimately deliver a compelling story and experience to our customers. There is often a misconception that the function of a brand is merely to place a logo on products. This is a classic mistake that leads to further problems. It's important to state first and foremost that the function of a brand is to create a consistent and harmonious interaction between the business, its employees, and its customers.
                 </div>
@@ -34,26 +32,32 @@ import imgAux02 from "../images/showcase/1-X-CnR-PosterMockup.png";
                     Simply put, Brand Architecture is a structured approach that allows the brand to grow in response to business needs while maintaining or uplifting its equity, positioning, and overall look-and-feel.
                 </div>
 
-                <h1>Our Journey</h1>
+                <h1 class="pt-10">Our Journey</h1>
 
-                <div>
+                <div class="pb-10">
                     What we are fundamentally doing here is preparing C&R's brand to accommodate current needs that did not previously exist, as well as to anticipate future needs. A well-structured brand allows us to keep pace with commercial and other requirements.
                 </div>
 
                 <div class="para-img">
-                    <img src={imgAux02.src} w-full />
-                    <details open><summary>Figure 1</summary>Samples applications of the design system on Sales Sheets.</details>
+                    <img src={imgAux02.src} class="w-full" />
+                    <details open>
+                        <summary> </summary>
+                        Samples applications of the design system on Sales Sheets.
+                    </details>
                 </div>
 
-                <div>Outlined below is our suggested steps to achieve a scalable brand that not only works well today but also embraces future changes.</div>
+                <div class="pt-10">Outlined below is our suggested steps to achieve a scalable brand that not only works well today but also embraces future changes.</div>
 
-                <h1>Expected Results</h1>
+                <h1 class="py-10">Expected Results</h1>
 
                 <div class="para-img">
-                    <img src={imgAux01.src} w-full />
-                    <details open><summary>Figure 2 </summary>A rendition of a delivery truck exposing a new and exciting colors of the brand</details>
+                    <img src={imgAux01.src} class="w-full" />
+                    <details open>
+                        <summary> </summary>
+                        A rendition of a delivery truck exposing a new and exciting colors of the brand
+                    </details>
                 </div>
-                <div>Our goal is to reengineer the brand structure to facilitate and drive business growth by allowing the brand to adapt to changes. The outcome of this project will be a modern tool for internal stakeholders, enabling them to proceed with business activities such as launching new product lines or venturing into new business models.</div>
+                <div class="pt-10">Our goal is to reengineer the brand structure to facilitate and drive business growth by allowing the brand to adapt to changes. The outcome of this project will be a modern tool for internal stakeholders, enabling them to proceed with business activities such as launching new product lines or venturing into new business models.</div>
                 <div>As the company grows, brand are strengthened thanks to a structure this project puts in place. We believe that the tool will not only facilitate the process but also inspire the business scalability.</div>
                 <div>For actual application, please visit <a href="https://cnrinteriors.com.sg">C&R website</a>.</div>
 
@@ -87,14 +91,14 @@ import imgAux02 from "../images/showcase/1-X-CnR-PosterMockup.png";
         font-weight: 100;
         line-height: 2.3rem;
         color: var(--color-nordsilver-300);
-        margin: 2rem 20rem 5rem 0;
+        margin: 2rem 1rem 5rem 0;
     }
     .para-normal div {
         font-family: "Inclusive Sans", sans-serif;
         font-weight: 300;
         font-size : 1.2rem;
         line-height: 1.6rem;
-        margin: 0 20rem 1.8rem 0;
+        margin-bottom: 1.2rem;
     }
     .para-normal h1 {
         font-family: "Sora", sans-serif;
@@ -112,9 +116,13 @@ import imgAux02 from "../images/showcase/1-X-CnR-PosterMockup.png";
     }
     .para-img {
         display: flex;
+        flex-direction: column;
         width: 100%;
         position: relative;
-        gap: 30px
+        border: 1px solid var(--color-sherpasblue);
+
+        place-self: center;
+        border-radius: 15px;
     }
     .para-img img {
         width: 100%;
@@ -122,22 +130,29 @@ import imgAux02 from "../images/showcase/1-X-CnR-PosterMockup.png";
     .para-img details {
         display: flex;
         position: absolute;
-        left: 50px;
-        bottom: 100px;
-        border: 0px solid var(--color-brightemerald);
-        background-color: var(--color-nordsilver-800);
-        color: var(--color-nordsilver-200);
-        font-size: 1rem;
-        font-weight: 200;
-        width: fit-content;
-        padding: 5px 25px 5px 25px;
-        border-radius: 50px;
-    }
-    .para-img details::marker{ content: "--"; }
-    .para-img summary {
+        align-items: start;
+        right: 0;
+        top: 0;
+        border: 0;
+        background-color: var(--color-sherpasblue);
         color: var(--color-brightemerald);
-        font-size: 1rem;
+        font-size: 0.8rem;
         font-weight: 600;
-        padding-right: 20px;
+        line-height: 0.8rem;
+        width: 100%;
+        height: fit-content;
+        padding: 10px 25px 10px 25px;
+        border-radius: 15px 15px 0 0;
+        flex-wrap: nowrap;
+    }
+
+    .para-img summary {
+        color: var(--color-pastellime);
+
+    }
+
+    @media screen and (max-width: 800px) {
+
+
     }
 </style>
