@@ -24,11 +24,12 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
                             Selected Works
                         </div>
                         <h4>C&R Furnitures</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est eum deleniti minima dolore vitae voluptatibus omnis quisquam aut debitis libero doloribus porro reiciendis perferendis quae, modi corporis distinctio veniam corrupti?</p>
+                        <p>A brand is organic; it evolves naturally over time. In this project, we addressed the challenge of brand maturation by honoring the company’s legacy while introducing a scalable, future-proof framework. The result is a visual system that maintains its heritage while adapting to the demands of a modern, growing market.</p>
+                        { /* <h5>Read the story</h5> */ }
                     </div>
                 </div>
             </div>
-    
+            { /*
             <div class="item">
                 <img src={Project02.src} alt="Brand development fro Villa Ledu in Samui, Thailand" />
                 <div class="content-wrapper">
@@ -41,16 +42,16 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
                 </div>
                 </div>
             </div>
-            
+            */ }
             <div class="item">
-                <img src={Project03.src} alt="Brand development fro Villa Ledu in Samui, Thailand" />
+                <img src={Project03.src} alt="Amadeus Voice of Customer" />
                 <div class="content-wrapper">
                 <div class="content">
                     <div class="h-fit font-funneldisplay font-bold tracking-[0.3em] uppercase text-xs text-left pb-2">
                         Selected Works
                     </div>
                     <h4>Voice of Customer</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est eum deleniti minima dolore vitae voluptatibus omnis quisquam aut debitis libero doloribus porro reiciendis perferendis quae, modi corporis distinctio veniam corrupti?</p>
+                    <p>This visual development for a customer campaign reinforces the vital importance of feedback and interaction between a business and its clients. By creating a cohesive design language, we transformed the campaign into a meaningful communication tool that effectively delivers core objectives and strengthens the brand-customer relationship.</p>
                 </div>
                 </div>
             </div>
@@ -62,8 +63,8 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
                     <div class="h-fit font-funneldisplay font-bold tracking-[0.3em] uppercase text-xs text-left pb-2">
                         Selected Works
                     </div>
-                    <h4>Renew Travel</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est eum deleniti minima dolore vitae voluptatibus omnis quisquam aut debitis libero doloribus porro reiciendis perferendis quae, modi corporis distinctio veniam corrupti?</p>
+                    <h4>Cytric Employer Branding</h4>
+                    <p>This project supported the strategic growth pillars of Cytric, an Amadeus subsidiary. We developed a visual and verbal identity designed to resonate with younger generations. The creative direction focuses on empowering new talent to enter the workplace with confidence and excitement, bridging the gap between corporate strategy and emerging professionals.</p>
                 </div>
                 </div>
             </div>
@@ -76,7 +77,7 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
                             Selected Works
                         </div>
                         <h4>Amadeus Global Report 2025</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est eum deleniti minima dolore vitae voluptatibus omnis quisquam aut debitis libero doloribus porro reiciendis perferendis quae, modi corporis distinctio veniam corrupti?</p>
+                        <p>As a member of the IBEX 35, Amadeus produces an annual report that is highly anticipated by both internal and external stakeholders. Our team was entrusted with developing a visual identity that emphasizes the company’s core purpose. The goal was to balance a sense of corporate dynamism with Amadeus’ commitment to innovation and leaving a positive, lasting impact on society.</p>
                     </div>
                 </div>
             </div>
@@ -90,10 +91,12 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
                         <img src={Project01tn.src} alt="Thumbnail for C&R Singapore project" />
                         <div class="content">The Voyage</div>
                     </div>
+                    { /*
                     <div class="item brightness-50 shadow-xl">
                         <img src={Project02tn.src} alt="Thumbnail for Villa Ledu" />
                         <div class="content">The Voyage</div>
                     </div>
+                    */ }
                     <div class="item brightness-50 shadow-xl">
                         <img src={Project03tn.src} alt="Amadeus' Voice of Customer" />
                         <div class="content">The Voyage</div>
@@ -265,6 +268,32 @@ import Project05tn from "../images/showcase/5-TN-GlobalReport2025.png";
         font-weight: 100;
         margin: 0 0 20px 0;
         color: var(--color-brightemerald);
+    }
+
+    .slider .list .item .content-wrapper .content h5 {
+        font-family: "Vend Sans", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--color-brightemerald);
+        border: 1px solid var(--color-brightemerald);
+        background-color: var(--color-sherpasblue);
+        border-radius: 20px;
+        width: fit-content;
+        height: fit-content;
+        padding: 3px 10px 3px 10px;
+        margin-top: 25px;
+    }
+
+    .slider .list .item .content-wrapper .content h5:hover {
+
+        color: var(--color-prune);
+        background-color: var(--color-brightemerald);
+        border-radius: 20px;
+        width: fit-content;
+        height: fit-content;
+        padding: 3px 10px 3px 10px;
+        margin-top: 25px;
     }
 
     .slider .list .item.active {
