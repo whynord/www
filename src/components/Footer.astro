@@ -1,57 +1,26 @@
 ---
-import NordLogo from "../images/NORD-Logo-2026-Primary.png";
-import Pug from "../images/AUX-pug-by-anu-priyapng.png";
+// Contact footer (home)
+import { contact } from '../data/site.js';
 ---
-<div class="flex w-full h-fit shadow-xl backdrop-brightness-20 bg-prune backdrop-saturate-0 justify-center inset-shadow-xs z-5">
-    <div class="flex flex-col w-full max-w-400 px-10 pt-10 pb-10 tablet:flex-row tablet:justify-around tablet:items-end items-start gap-5 text-nordsilver">
 
-        <div class="flex tablet:w-7/10 w-full h-fit">
-            <div class="flex flex-col w-full justify-start items-start text-gray-300">
-                <div class="hidden invisible">
-                    <img src={NordLogo.src} class="w-[100px] h-auto mb-2" />
-                </div>
-                <div class="flex flex-col gap-2">
-                    <p class="text-laspalmas font-bold">
-                        Copyright by Panpong Varavarn
-                    </p>
-                    <p class="font-regular">
-                        Images used in homepage's key visual are created by Nick
-                        Fancher <br />and the pug on the right is created by
-                        <a href="https://unsplash.com/@nibkromos/illustrations"
-                            >Anu Priya.</a
-                        >
-                    </p>
-                    <p class="font-regular">Find them on <a>Unsplash.com</a></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="flex tablet:w-3/10 w-full h-fit mt-5">
-            <div class="flex flex-col w-full h-fit justify-end items-start text-gray-300 gap-2">
-                <p>
-                    Handcrafted with love based on
-                    <a href="https://astro.build/">Astro</a>
-                    + <a href="https://tailwindcss.com/">Tailwind CSS</a> + Javascript and using Webstorm on Linux AnduinOS.
-                </p>
-                <p>
-                    Also big thanks for <a href="https://gemini.google.com/">Gemini</a><br />
-                    for guiding through this steep curve.
-                </p>
-                <p>Finally, miss you, Tank & Khaohomm.</p>
-            </div>
-        </div>
-
-        <img src={Pug.src} class="w-25 min-h-[100px]max-w-[120px] h-auto p-0 m-0 justify-end" />
-
+<footer id="contact" style="position:relative; border-top:2px solid #C6FF00;">
+  <div style="padding:clamp(70px,10vw,110px) clamp(16px,4vw,48px) 60px; text-align:center;">
+    <div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(244,244,242,0.3); margin-bottom:26px;">Signal received? Let's transmit.</div>
+    <a href={`mailto:${contact.email}`} data-cta style="text-decoration:none; color:#F4F4F2; display:block;">
+      <div style="font-size:clamp(40px,9vw,150px); font-weight:800; letter-spacing:-0.045em; line-height:0.86; text-transform:uppercase;">Ready to<br />experiment<span style="color:#C6FF00;">?</span></div>
+    </a>
+    <a href={`mailto:${contact.email}`} data-cta style="display:inline-block; margin-top:44px; background:#C6FF00; color:#0E0E0E; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none; padding:18px 44px; font-weight:700;">Let's build something inevitable →</a>
+    <div style="margin-top:34px; display:flex; gap:18px; justify-content:center; flex-wrap:wrap; font-family:'Space Mono',monospace; font-size:11px; color:rgba(244,244,242,0.45); letter-spacing:0.08em;">
+      <a href={`tel:${contact.phone.replace(/\s|\(|\)/g, '')}`} style="color:inherit; text-decoration:none;">{contact.phone}</a>
+      <span style="color:#C6FF00;">/</span>
+      <a href={`mailto:${contact.emailAlt}`} style="color:inherit; text-decoration:none;">{contact.emailAlt}</a>
+      <span style="color:#C6FF00;">/</span>
+      <span>{contact.social}</span>
     </div>
-</div>
-
-<style scoped>
-    p {
-        font-family: "Sora", sans-serif;
-        font-size: 0.7rem;
-    }
-    a {
-        color: #d2d8e6;
-    }
-</style>
+  </div>
+  <div style="display:flex; justify-content:space-between; align-items:center; padding:22px clamp(16px,3vw,48px); border-top:1px solid #242424; font-family:'Space Mono',monospace; font-size:10px; color:rgba(244,244,242,0.3); letter-spacing:0.1em; text-transform:uppercase; flex-wrap:wrap; gap:8px;">
+    <span>© 2026 Panpong Varavarn</span>
+    <span>Structured Chaos™ // Creativity Lab</span>
+    <span>Node: Bangkok, TH</span>
+  </div>
+</footer>

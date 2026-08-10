@@ -1,24 +1,15 @@
 {
-	"name": "whynord-www",
-	"type": "module",
-	"version": "1.1",
-	"scripts": {
-		"dev": "astro dev",
-		"build": "astro build",
-		"preview": "astro build && wrangler pages dev",
-		"astro": "astro",
-		"deploy": "astro build && wrangler pages deploy",
-		"cf-typegen": "wrangler types"
-	},
-	"dependencies": {
-		"@astrojs/cloudflare": "^12.6.12",
-		"@tailwindcss/vite": "^4.1.18",
-		"astro": "^5.16.14",
-		"tailwindcss": "^4.1.18",
-		"typed.js": "^2.1.0"
-	},
-	"devDependencies": {
-		"@types/node": "^25.0.10",
-		"wrangler": "^4.60.0"
-	}
+  "name": "nord-creativity-lab",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.18.2"
+  }
 }

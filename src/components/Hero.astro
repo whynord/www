@@ -1,0 +1,120 @@
+---
+// Hero — terminal, live clock readout, mouse coords, meta grid
+---
+
+<section
+    style="min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:130px clamp(16px,4vw,48px) 70px; position:relative; border-bottom:1px solid #242424; overflow:hidden;"
+>
+    <div
+        style="position:absolute; inset:0; pointer-events:none; background-image:linear-gradient(rgba(244,244,242,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(244,244,242,0.035) 1px,transparent 1px); background-size:64px 64px;"
+    >
+    </div>
+
+    <div
+        style="position:absolute; top:96px; right:clamp(16px,4vw,48px); font-family:'Space Mono',monospace; font-size:10px; color:rgba(244,244,242,0.25); text-align:right; letter-spacing:0.1em;"
+    >
+        NODE: WHYNORD.NET<br />STATUS: 200 OK
+    </div>
+    <div
+        id="hero-coords"
+        style="position:absolute; bottom:34px; right:clamp(16px,4vw,48px); font-family:'Space Mono',monospace; font-size:10px; color:rgba(244,244,242,0.25); letter-spacing:0.1em;"
+    >
+        BANGKOK, TH // 13.7563°N
+    </div>
+
+    <div
+        data-reveal
+        style="font-family:'Space Mono',monospace; font-size:11px; color:#C6FF00; letter-spacing:0.16em; text-transform:uppercase; margin-bottom:30px;"
+    >
+        Creativity Lab // Visual Brand Architecture
+    </div>
+
+    <h1
+        data-reveal
+        style="font-size:clamp(54px,11vw,168px); line-height:0.86; letter-spacing:-0.045em; font-weight:200; text-transform:capitalize; margin:0 0 38px;"
+    >
+        Visual systems<br />for every<br /><span
+            style="-webkit-text-stroke: 1px #C6FF00; color:transparent;"
+            >frequency.</span
+        >
+    </h1>
+
+    <div
+        data-reveal
+        style="background:rgba(198,255,0,0.05); border:1px solid rgba(198,255,0,0.22); border-left:3px solid #C6FF00; padding:20px 24px; max-width:560px; margin-bottom:50px; font-family:'Space Mono',monospace;"
+    >
+        <div
+            style="font-size:13px; line-height:2; color:rgba(244,244,242,0.55);"
+        >
+            <span style="color:#C6FF00; margin-right:8px;">$</span><span
+                style="color:#F4F4F2;">nord --identify</span
+            >
+        </div>
+        <div
+            style="font-size:13px; line-height:2; color:rgba(244,244,242,0.4); font-style:italic;"
+        >
+            → Brand &amp; marketing creative, Bangkok TH
+        </div>
+        <div
+            style="font-size:13px; line-height:2; color:rgba(244,244,242,0.4); font-style:italic;"
+        >
+            → 25+ years building brands that become inevitable
+        </div>
+        <div
+            style="font-size:13px; line-height:2; color:rgba(244,244,242,0.55);"
+        >
+            <span style="color:#C6FF00; margin-right:8px;">$</span><span
+                style="color:#F4F4F2;">nord --status</span
+            >
+        </div>
+        <div
+            style="font-size:13px; line-height:2; color:rgba(244,244,242,0.4);"
+        >
+            → <span id="typed-output"></span><span
+                style="display:inline-block; width:8px; height:14px; background:#C6FF00; vertical-align:middle; animation:nd-blink .8s step-end infinite;"
+            ></span>
+        </div>
+    </div>
+
+    <div
+        data-reveal
+        style="display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:#242424; border:1px solid #242424; max-width:640px;"
+    >
+        <div style="padding:16px 20px; background:#0E0E0E;">
+            <div
+                style="font-family:'Victor Mono',monospace; font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:#8a8a8a; margin-bottom:6px;"
+            >
+                Experience
+            </div><div style="font-size:15px; font-weight:700;">
+                25<span style="color:#C6FF00;">+</span> yrs
+            </div>
+        </div>
+        <div style="padding:16px 20px; background:#0E0E0E;">
+            <div
+                style="font-family:'Victor Mono',monospace; font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:#8a8a8a; margin-bottom:6px;"
+            >
+                Scope
+            </div><div style="font-size:15px; font-weight:700;">
+                B2B <span style="color:#C6FF00;">&amp;</span> B2C
+            </div>
+        </div>
+        <div style="padding:16px 20px; background:#0E0E0E;">
+            <div
+                style="font-family:'Victor Mono',monospace; font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:#8a8a8a; margin-bottom:6px;"
+            >
+                Coverage
+            </div><div style="font-size:15px; font-weight:700;">
+                Local <span style="color:#C6FF00;">+</span> Intl
+            </div>
+        </div>
+        <div style="padding:16px 20px; background:#0E0E0E;">
+            <div
+                style="font-family:'Victor Mono',monospace; font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:#8a8a8a; margin-bottom:6px;"
+            >
+                Node
+            </div><div style="font-size:15px; font-weight:700;">
+                Bangkok<span style="color:#C6FF00;">,</span> TH
+            </div>
+        </div>
+    </div>
+</section>

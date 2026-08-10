@@ -1,0 +1,32 @@
+---
+// Marquee strip
+const items = [
+    "Brand Strategy",
+    "Identity Systems",
+    "Creative Direction",
+    "Visual Architecture",
+    "Structured Chaos",
+    "Web Design",
+];
+// duplicated once so the -50% translate loops seamlessly
+const loop = [...items, ...items];
+---
+
+<div
+    style="border-bottom:1px solid #242424; padding:13px 0; overflow:hidden; white-space:nowrap; background-color: #C6FF00;"
+>
+    <div style="display:inline-flex; animation:nd-marq 24s linear infinite;">
+        <span
+            style="font-family:'Victor Mono',monospace; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(10, 10, 10,1);font-weight: 700;"
+        >
+            {
+                loop.map((it) => (
+                    <Fragment>
+                        {it}&nbsp;&nbsp;<span style="color:#0A0A0A;">✦</span>
+                        &nbsp;&nbsp;
+                    </Fragment>
+                ))
+            }
+        </span>
+    </div>
+</div>

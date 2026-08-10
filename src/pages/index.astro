@@ -1,11 +1,130 @@
 ---
-import Home from "../components/Home.astro";
-import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import { identity, marquee, offerings, engagement, works } from '../data/site.js';
 ---
 
-<Layout>
-	<Home />
-</Layout>
+<Base title="NORD — Panpong “Nord” Varavarn">
+  <Nav current="home" />
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="eyebrow">{identity.eyebrow}</div>
+    <h1 class="hero-line">
+      <span class="glitch" data-t={identity.heroLine}>{identity.heroLine}</span>
+    </h1>
+    <p class="lede">
+      Twenty-five years building visual systems across B2B and B2C, local and international — from
+      conception and strategy through to execution.
+    </p>
+    <div class="meta">
+      {identity.stats.map((s) => (
+        <div>
+          <div class="k">{s.k}</div>
+          <div class="v">{s.v}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="crack" id="crack">⚠ STRUCTURED CHAOS // THE OPPOSITE IS UNDERNEATH</div>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      {[...marquee, ...marquee].map((m) => <span>{m}</span>)}
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="h2">Profile</div>
+    <h2 class="big">
+      <span class="glitch" data-t="A brand communications leader who treats strategy and craft as one discipline.">
+        A brand communications leader who treats strategy and craft as one discipline.
+      </span>
+    </h2>
+    <div class="about">
+      {identity.about.map((p) => <p>{p}</p>)}
+    </div>
+  </section>
+
+  <!-- OFFERINGS -->
+  <section id="offerings">
+    <div class="h2">What I put on the table</div>
+    <h2 class="big">Offerings</h2>
+    <div class="offerings">
+      {offerings.map((o) => (
+        <div class="offer">
+          <div class="n">{o.n}</div>
+          <div>
+            <h3 class="glitch" data-t={o.title}>{o.title}</h3>
+            <p>{o.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="engage">{engagement}</div>
+  </section>
+
+  <!-- WORKS -->
+  <section id="works">
+    <div class="h2">Selected work — click a row</div>
+    <h2 class="big">Works</h2>
+    <div class="works">
+      {works.map((w) => (
+        <a class="work" href={`/works/${w.slug}`} data-reveal={w.reveal}>
+          <div class="num">{w.num}</div>
+          <div class="name glitch" data-t={w.title}>{w.title}</div>
+          <div class="cat">{w.category}</div>
+          <div class="flip"><b>↯ REVEAL:</b>&nbsp;{w.reveal}</div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>
+      <span class="glitch" data-t="Let's talk.">Let's talk.</span>
+    </h2>
+    <div class="rows">
+      {identity.contact.emails.map((e) => <div>{e}</div>)}
+      <div>{identity.contact.phone}</div>
+      <div>{identity.contact.social}</div>
+      <div>{identity.contact.site}</div>
+    </div>
+    <a class="cta" href={`mailto:${identity.contact.emails[0]}`}>Start a conversation →</a>
+  </section>
+
+  <div class="hint">hover the type · scroll for the crack · click a work row</div>
+</Base>
+
+<style>
+  .marquee {
+    border-bottom: 1px solid var(--rule);
+    overflow: hidden;
+    background: var(--paper);
+  }
+  .marquee-track {
+    display: inline-flex;
+    gap: 48px;
+    padding: 18px 0;
+    white-space: nowrap;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--dim);
+    animation: scroll-x 28s linear infinite;
+  }
+  .marquee-track span::after {
+    content: '·';
+    margin-left: 48px;
+    color: var(--rule);
+  }
+  @keyframes scroll-x {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .work { text-decoration: none; }
+</style>

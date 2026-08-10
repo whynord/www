@@ -1,18 +1,6 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
-import cloudflare from '@astrojs/cloudflare';
-import tailwindcss from "@tailwindcss/vite";
 
-// https://astro.build/config
+// https://astro.build
 export default defineConfig({
-  adapter: cloudflare({
-    platformProxy: {
-      enabled: true
-    },
-
-    imageService: "cloudflare"
-  }),
-  vite: {
-    plugins: [tailwindcss()],
-  },
+  site: 'https://whynord.net',
 });
