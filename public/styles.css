@@ -500,3 +500,7 @@ section[id], main [id] { scroll-margin-top: 128px; }
 /* ---------- Gallery disclaimer ---------- */
 .gallery-note { margin: -96px var(--pad-x) 120px; max-width: 760px; }
 @media (max-width: 760px) { .gallery-note { margin: -56px var(--pad-x) 72px; } }
+
+/* ---------- Full-width stacked gallery (16:9) ---------- */
+.gallery-wide { grid-template-columns: minmax(0, 1fr); }
+.gallery-wide img { aspect-ratio: 16 / 9; }
