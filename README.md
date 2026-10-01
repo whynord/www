@@ -7,6 +7,7 @@ The whynord portfolio site. Plain HTML and CSS: no build step, no dependencies. 
 - `public/site.js`: theme switch and the Save CV as PDF button
 - `public/styles.css`: all styles; colours, type and spacing from the whynord design system
 - `public/work/*.html`: project pages (uncl, dailydose, vela, villa-ledu, cnr), served at /work/<name>
+- `public/privacy.html`: Privacy & cookies notice, served at /privacy
 - `public/404.html`: not-found page
 - `public/favicon.svg`, `favicon.ico`, `apple-touch-icon.png`, `assets/og.png`: browser icons and the link preview image
 - `public/sitemap.xml`, `robots.txt`: for search engines (add new pages to the sitemap)
