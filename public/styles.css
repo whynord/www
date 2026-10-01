@@ -496,3 +496,7 @@ section[id], main [id] { scroll-margin-top: 128px; }
 .foot-legal a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .case-copy code { font-family: ui-monospace, "Bitcount Grid Single", monospace; font-size: 0.9em; padding: 1px 6px; border: 1px solid var(--rule); border-radius: 8px; }
 .case-copy strong { font-weight: 400; color: var(--ink-strong); }
+
+/* ---------- Gallery disclaimer ---------- */
+.gallery-note { margin: -96px var(--pad-x) 120px; max-width: 760px; }
+@media (max-width: 760px) { .gallery-note { margin: -56px var(--pad-x) 72px; } }
