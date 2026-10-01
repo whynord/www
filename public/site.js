@@ -72,3 +72,12 @@
   }
   loop();
 })();
+
+/* Scroll cue: fades once the visitor starts scrolling */
+(function () {
+  var cue = document.querySelector('.scroll-cue');
+  if (!cue) return;
+  function check() { cue.classList.toggle('is-hidden', window.scrollY > 40); }
+  window.addEventListener('scroll', check, { passive: true });
+  check();
+})();
