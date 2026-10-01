@@ -339,8 +339,8 @@ img { display: block; max-width: 100%; }
 .role-title, .client-name, .degree, .work-name, .off-name {
   font-family: var(--font-display); font-weight: 400; line-height: 1; letter-spacing: 0.01em;
 }
-.role-title, .degree, .work-name, .off-name { color: var(--ink-display); }
-.role-now .role-title, .client-name { color: var(--block-fg); }
+.role-title, .degree, .work-name, .off-name, .client-name,
+.role-now .role-title { color: #ffffff; }
 @media print {
   .role-title, .degree, .client-name { font-size: 14pt; }
 }
