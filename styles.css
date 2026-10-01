@@ -334,3 +334,13 @@ img { display: block; max-width: 100%; }
   .section-head { break-after: avoid; page-break-after: avoid; }
   #capabilities, #education { break-inside: avoid; }
 }
+
+/* Names and titles in the display face, for contrast with running text */
+.role-title, .client-name, .degree, .work-name, .off-name {
+  font-family: var(--font-display); font-weight: 400; line-height: 1; letter-spacing: 0.01em;
+}
+.role-title, .degree, .work-name, .off-name { color: var(--ink-display); }
+.role-now .role-title, .client-name { color: var(--block-fg); }
+@media print {
+  .role-title, .degree, .client-name { font-size: 14pt; }
+}
