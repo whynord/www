@@ -214,6 +214,7 @@ img { display: block; max-width: 100%; }
 .work-feature { grid-column: 1 / -1; }
 
 /* ---------- About / CV ---------- */
+.print-mark { display: none; }
 .nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 8px; text-decoration-thickness: 2px; }
 .display-wide { max-width: 1264px; }
 .btn-button { background: transparent; color: var(--ink-strong); font: inherit; font-size: 20px; cursor: pointer; }
@@ -270,15 +271,19 @@ img { display: block; max-width: 100%; }
   .chips { font-size: 16px; }
 }
 
-/* ---------- Print: a clean one-colour CV ---------- */
+/* ---------- Print: the CV in the lime theme ---------- */
 @media print {
   :root, :root[data-theme] {
-    --ground: #ffffff; --ink-display: #07583e; --ink-body: #000000; --ink-strong: #000000;
-    --ink-eyebrow: #07583e; --rule: #000000; --block-bg: #ffffff; --block-fg: #000000;
+    --ground: #63ba23; --ink-display: #07583e; --ink-body: #000000; --ink-strong: #000000;
+    --ink-eyebrow: #c0f73c; --rule: #000000; --block-bg: #171910; --block-fg: #b0f57a;
     --display-size: 30px; --pad-x: 0px; --label-col: 170px;
   }
-  @page { margin: 16mm 14mm; }
-  body { background: #fff; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  @page { size: A4; margin: 0; }
+  html, body { background: var(--ground); }
+  body { padding: 14mm; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  .mark-night { display: none !important; }
+  .print-mark { display: flex !important; }
   .site-header, .no-print, .skip, .socials, .site-footer, #contact .section-head { display: none !important; }
   .hero, .section { padding: 0 0 18px; border-top: 0; }
   .section-head { gap: 8px; margin-bottom: 12px; }
@@ -289,7 +294,7 @@ img { display: block; max-width: 100%; }
   .role-title, .degree, .client-name { font-size: 12pt; }
   .role-years { font-size: 16pt !important; }
   .role { padding: 10px 0; break-inside: avoid; }
-  .role-now { border: 1px solid #000; padding: 12px; margin-bottom: 8px; break-inside: auto; }
+  .role-now { padding: 14px; margin-bottom: 8px; break-inside: auto; }
   .label-name { font-size: 13pt; padding-bottom: 6px; }
   .body, .client-line { font-weight: 400; }
   .role-years { white-space: nowrap; }
@@ -304,4 +309,21 @@ img { display: block; max-width: 100%; }
   .chips li { padding: 4px 8px; border-width: 1px; }
   .email { font-size: 14pt; }
   .hero { gap: 12px; }
+}
+@media print {
+  .print-mark { align-items: center; justify-content: space-between; padding-bottom: 10px; border-bottom: 1px solid var(--rule); font-size: 10pt; }
+  .print-mark img { width: 51px; height: 33px; }
+}
+@media print {
+  .role-now { display: block; }
+  .role-now .role-when { flex-direction: row; align-items: baseline; gap: 14px; padding: 0 0 10px; }
+  .role-now .role-when .eyebrow { margin-right: 4px; }
+}
+@media print {
+  .clients { display: flex; flex-wrap: wrap; column-gap: 0; justify-content: space-between; }
+  .clients li { width: 48%; box-sizing: border-box; margin-top: 10px; }
+}
+@media print {
+  .section-head { break-after: avoid; page-break-after: avoid; }
+  #capabilities, #education { break-inside: avoid; }
 }
