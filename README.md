@@ -6,7 +6,11 @@ The whynord portfolio site. Plain HTML and CSS: no build step, no dependencies.
 - `about.html`: About / CV, served at /about (prints as a clean CV)
 - `site.js`: theme switch and the Save CV as PDF button
 - `styles.css`: all styles; colours, type and spacing from the whynord design system
+- `work/cnr.html`: C&R project page, served at /work/cnr
 - `404.html`: not-found page
+- `favicon.svg`, `favicon.ico`, `apple-touch-icon.png`, `assets/og.png`: browser icons and the link preview image
+- `sitemap.xml`, `robots.txt`: for search engines (add new pages to the sitemap)
+- `_headers`: Cloudflare Pages caching and security headers
 - `assets/`: logo marks, work images and self-hosted fonts (Bitcount Grid Single, Inclusive Sans, Noto Sans Thai; SIL Open Font License)
 
 Two themes: lime (default) and night, switched from the header and remembered per visitor.
