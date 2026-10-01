@@ -1,8 +1,0 @@
-{
-  "name": "whynord-net-2027",
-  // Set this to today's date
-  "compatibility_date": "2026-06-18",
-  "assets": {
-    "directory": "./dist"
-  }
-}

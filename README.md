@@ -1,0 +1,14 @@
+# whynord.net
+
+The whynord portfolio site. Plain HTML and CSS: no build step, no dependencies.
+
+- `index.html`: the homepage
+- `styles.css`: all styles; colours, type and spacing from the whynord design system
+- `404.html`: not-found page
+- `assets/`: logo marks and work images
+
+Two themes: lime (default) and night, switched from the header and remembered per visitor.
+
+## Deploying (Cloudflare)
+
+Connect this repo to Cloudflare Pages with no build command and `/` as the output directory. Every push to `main` goes live.
