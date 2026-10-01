@@ -1,0 +1,13 @@
+{
+  // whynord.net — a static site served by Cloudflare Workers.
+  // Only the public/ folder is published; nothing else in the repo goes live.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "whynord",
+  "compatibility_date": "2026-09-30",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  },
+  "observability": { "enabled": true }
+}
