@@ -3,6 +3,8 @@
 The whynord portfolio site. Plain HTML and CSS: no build step, no dependencies.
 
 - `index.html`: the homepage
+- `about.html`: About / CV, served at /about (prints as a clean CV)
+- `site.js`: theme switch and the Save CV as PDF button
 - `styles.css`: all styles; colours, type and spacing from the whynord design system
 - `404.html`: not-found page
 - `assets/`: logo marks and work images

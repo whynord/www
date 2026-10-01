@@ -138,7 +138,7 @@ img { display: block; max-width: 100%; }
 .work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; row-gap: 64px; }
 .work { display: flex; flex-direction: column; gap: 24px; text-decoration: none; }
 .work-media {
-  aspect-ratio: 632 / 440; background: var(--block-bg); border-radius: var(--radius);
+  aspect-ratio: 16 / 9; background: var(--block-bg); border-radius: var(--radius);
   padding: 28px; display: flex; align-items: flex-end; color: var(--block-fg); font-size: 20px;
 }
 .work-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
@@ -211,3 +211,97 @@ img { display: block; max-width: 100%; }
 /* Work covers */
 .work-media { position: relative; overflow: hidden; padding: 0; }
 .work-media img { width: 100%; height: 100%; object-fit: cover; }
+.work-feature { grid-column: 1 / -1; }
+
+/* ---------- About / CV ---------- */
+.nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 8px; text-decoration-thickness: 2px; }
+.display-wide { max-width: 1264px; }
+.btn-button { background: transparent; color: var(--ink-strong); font: inherit; font-size: 20px; cursor: pointer; }
+.btn-button:hover { color: var(--hover); border-color: var(--hover); }
+
+.roles { display: flex; flex-direction: column; }
+.role {
+  display: grid; grid-template-columns: var(--label-col) minmax(0, 1fr);
+  padding: 40px 0; border-bottom: 1px solid var(--rule);
+}
+.role-when { display: flex; flex-direction: column; gap: 12px; padding-right: 48px; }
+.role-years { font-family: var(--font-display); font-size: 40px; line-height: 0.8; color: var(--ink-display); }
+.role-what { display: flex; flex-direction: column; gap: 12px; }
+.role-title { margin: 0; font-size: 30px; line-height: 1.2; font-weight: 400; }
+.role-what .body { margin-top: 8px; }
+
+.role-now {
+  --label-col-now: calc(var(--label-col) - 48px);
+  grid-template-columns: var(--label-col-now) minmax(0, 1fr);
+  background: var(--block-bg); color: var(--block-fg); border: 0; border-radius: var(--radius);
+  padding: 48px 48px 52px; margin-bottom: 16px;
+}
+.role-now .eyebrow, .role-now .role-years, .role-now .caption, .role-now .role-title, .role-now .body { color: var(--block-fg); }
+.role-now .role-years { font-size: 56px; }
+.role-now .role-org { padding-bottom: 16px; border-bottom: 1px solid var(--block-fg); }
+.role-now .body { margin-top: 0; }
+
+.clients {
+  list-style: none; margin: 16px 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; row-gap: 28px;
+}
+.clients li { padding-top: 20px; border-top: 1px solid var(--block-fg); display: flex; flex-direction: column; gap: 8px; }
+.client-name { font-size: 30px; line-height: 1.2; }
+.client-line { font-size: 20px; line-height: 1.3; font-style: italic; }
+
+.degrees { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.degrees li {
+  display: grid; grid-template-columns: var(--label-col) minmax(0, 1fr); align-items: baseline;
+  padding: 32px 0; border-bottom: 1px solid var(--rule);
+}
+.degrees li > div { display: flex; flex-direction: column; gap: 8px; }
+.degree { font-size: 30px; line-height: 1.2; }
+
+.chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 12px; font-size: 20px; line-height: 1.2; }
+.chips li { padding: 12px 20px; border: 2px solid var(--rule); border-radius: var(--radius); }
+
+@media (max-width: 760px) {
+  .role, .degrees li { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .role-when { padding-right: 0; }
+  .role-now { padding: 28px 20px 32px; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .role-now .role-years { font-size: 40px; }
+  .role-title, .degree, .client-name { font-size: 24px; }
+  .clients { grid-template-columns: minmax(0, 1fr); }
+  .chips { font-size: 16px; }
+}
+
+/* ---------- Print: a clean one-colour CV ---------- */
+@media print {
+  :root, :root[data-theme] {
+    --ground: #ffffff; --ink-display: #07583e; --ink-body: #000000; --ink-strong: #000000;
+    --ink-eyebrow: #07583e; --rule: #000000; --block-bg: #ffffff; --block-fg: #000000;
+    --display-size: 30px; --pad-x: 0px; --label-col: 170px;
+  }
+  @page { margin: 16mm 14mm; }
+  body { background: #fff; }
+  .site-header, .no-print, .skip, .socials, .site-footer, #contact .section-head { display: none !important; }
+  .hero, .section { padding: 0 0 18px; border-top: 0; }
+  .section-head { gap: 8px; margin-bottom: 12px; }
+  .display { line-height: 0.9; padding-top: 0; }
+  .eyebrow { font-size: 9pt; }
+  .body { font-size: 11pt; }
+  .caption, .chips { font-size: 10pt; }
+  .role-title, .degree, .client-name { font-size: 12pt; }
+  .role-years { font-size: 16pt !important; }
+  .role { padding: 10px 0; break-inside: avoid; }
+  .role-now { border: 1px solid #000; padding: 12px; margin-bottom: 8px; break-inside: auto; }
+  .label-name { font-size: 13pt; padding-bottom: 6px; }
+  .body, .client-line { font-weight: 400; }
+  .role-years { white-space: nowrap; }
+  .role-now { grid-template-columns: var(--label-col) minmax(0, 1fr); }
+  .role-now .role-when { padding-right: 12px; }
+  .client-line { font-size: 10pt; }
+  .clients { row-gap: 10px; margin-top: 6px; }
+  .clients li { padding-top: 8px; }
+  .split { margin-top: 0 !important; }
+  .clients li { break-inside: avoid; }
+  .degrees li { padding: 8px 0; }
+  .chips li { padding: 4px 8px; border-width: 1px; }
+  .email { font-size: 14pt; }
+  .hero { gap: 12px; }
+}
