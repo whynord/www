@@ -1,0 +1,9 @@
+{
+  "name": "whynord",
+  "private": true,
+  "description": "whynord.net: plain HTML and CSS, nothing to build. Cloudflare publishes public/ (see wrangler.jsonc).",
+  "scripts": {
+    "build": "echo \"Nothing to build: the site is plain HTML in public/\"",
+    "deploy": "wrangler deploy"
+  }
+}

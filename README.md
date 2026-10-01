@@ -18,4 +18,4 @@ Two themes: lime (default) and night, switched from the header and remembered pe
 
 ## Deploying (Cloudflare)
 
-Cloudflare Workers Builds is connected to this repo and runs `npx wrangler deploy` on every push to `main`. `wrangler.jsonc` points it at `public/`.
+Cloudflare Workers Builds is connected to this repo and runs on every push to `main`: a no-op build (`package.json`, kept only because Cloudflare's build step expects a build script), then `npx wrangler deploy`. `wrangler.jsonc` points it at `public/`.
