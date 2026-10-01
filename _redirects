@@ -1,0 +1,13 @@
+# Old whynord.net addresses -> new pages
+/works/samui-residence   /work/villa-ledu   301
+/works/villa-ledu        /work/villa-ledu   301
+/works/cr-furnitures     /work/cnr          301
+/works/vela              /work/vela         301
+/works/uncl              /work/uncl         301
+/works/dailydose         /work/dailydose    301
+/works                   /#work             301
+/works/*                 /#work             301
+/thinking                https://journal.whynord.net   301
+/journal                 https://journal.whynord.net   301
+/journal/*               https://journal.whynord.net   301
+/index.html              /                  301
