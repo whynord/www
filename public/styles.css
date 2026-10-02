@@ -37,7 +37,7 @@
 }
 
 :root {
-  --font-display: "Bitcount Grid Single", ui-monospace, monospace;
+  --font-display: "Bitcount Grid Single", "Noto Sans Thai", ui-monospace, monospace;
   --font-sans: "Inclusive Sans", "Noto Sans Thai", system-ui, sans-serif;
   --radius: 15px;
   --pad-x: 88px;
