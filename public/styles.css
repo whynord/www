@@ -453,15 +453,15 @@ section[id], main [id] { scroll-margin-top: 128px; }
 @media print { .menu-toggle, .mobile-menu { display: none !important; } }
 
 /* ---------- Typing hero ---------- */
-.type-hero { position: relative; }
+[data-type] { position: relative; }
 .type-live { display: none; }
-.type-hero.is-typing .type-ghost { visibility: hidden; }
-.type-hero.is-typing .type-live { display: block; position: absolute; left: 0; right: 0; top: 0; padding-top: inherit; }
+[data-type].is-typing .type-ghost { visibility: hidden; }
+[data-type].is-typing .type-live { display: block; position: absolute; left: 0; right: 0; top: 0; padding-top: inherit; }
 .type-caret {
   display: inline-block; width: 0.08em; height: 0.58em; margin-left: 0.04em;
   background: currentColor; vertical-align: baseline; border-radius: 0.04em;
 }
-.type-hero.is-paused .type-caret { animation: caret-blink 1.05s steps(1) infinite; }
+[data-type].is-paused .type-caret { animation: caret-blink 1.05s steps(1) infinite; }
 @keyframes caret-blink { 50% { opacity: 0; } }
 
 /* ---------- Hero intro (headline block) ---------- */

@@ -41,36 +41,50 @@
   window.matchMedia('(min-width: 1101px)').addEventListener('change', function (m) { if (m.matches) set(false); });
 })();
 
-/* Typing hero: types the headline, pauses 8 seconds, then loops */
+/* Typing effect: types text, holds, erases, loops. Hero starts on load; others start when scrolled into view. */
 (function () {
-  var h = document.querySelector('[data-type]');
-  if (!h) return;
+  var nodes = document.querySelectorAll('[data-type]');
+  if (!nodes.length) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var text = h.querySelector('.type-ghost').textContent;
-  var live = h.querySelector('.type-live');
-  var out = document.createElement('span');
-  var caret = document.createElement('span');
-  caret.className = 'type-caret';
-  live.appendChild(out); live.appendChild(caret);
-  h.classList.add('is-typing');
-  var i = 0;
-  function wait(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
-  async function loop() {
-    for (;;) {
-      h.classList.remove('is-paused');
-      for (i = 0; i <= text.length; i++) {
-        out.textContent = text.slice(0, i);
-        var ch = text.charAt(i - 1);
-        await wait(ch === ' ' ? 120 : (ch === '.' || ch === "'" ? 220 : 55 + Math.random() * 60));
+
+  function setup(h) {
+    if (h.dataset.typing) return;
+    h.dataset.typing = '1';
+    var ghost = h.querySelector('.type-ghost');
+    var live = h.querySelector('.type-live');
+    if (!ghost || !live) return;
+    var text = ghost.textContent;
+    var out = document.createElement('span');
+    var caret = document.createElement('span');
+    caret.className = 'type-caret';
+    live.appendChild(out); live.appendChild(caret);
+    h.classList.add('is-typing');
+    function wait(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+    async function loop() {
+      for (;;) {
+        h.classList.remove('is-paused');
+        for (var i = 0; i <= text.length; i++) {
+          out.textContent = text.slice(0, i);
+          var ch = text.charAt(i - 1);
+          await wait(ch === ' ' ? 120 : (ch === '.' || ch === "'" || ch === '\u2019' ? 220 : 55 + Math.random() * 60));
+        }
+        h.classList.add('is-paused');
+        await wait(8000);
+        h.classList.remove('is-paused');
+        for (var j = text.length; j >= 0; j--) { out.textContent = text.slice(0, j); await wait(18); }
+        await wait(500);
       }
-      h.classList.add('is-paused');
-      await wait(8000);
-      h.classList.remove('is-paused');
-      for (i = text.length; i >= 0; i--) { out.textContent = text.slice(0, i); await wait(18); }
-      await wait(500);
     }
+    loop();
   }
-  loop();
+
+  var io = ('IntersectionObserver' in window) ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { io.unobserve(e.target); setup(e.target); } });
+  }, { threshold: 0.35, rootMargin: '0px 0px -8% 0px' }) : null;
+
+  nodes.forEach(function (n) {
+    if (n.closest('.hero') || !io) { setup(n); } else { io.observe(n); }
+  });
 })();
 
 /* Scroll cue: fades once the visitor starts scrolling */
