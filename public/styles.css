@@ -95,7 +95,7 @@ img { display: block; max-width: 100%; height: auto; }
 .theme-toggle:hover { color: var(--hover); border-color: var(--hover); }
 
 /* Shared */
-.section { padding: 120px var(--pad-x); border-top: 1px solid var(--rule); }
+.section { padding: 120px var(--pad-x); }
 .section-head { display: flex; flex-direction: column; gap: 40px; margin-bottom: 72px; }
 .eyebrow { font-size: 16px; line-height: 16px; letter-spacing: 0.1em; color: var(--ink-eyebrow); white-space: pre-wrap; margin: 0; }
 .display {
