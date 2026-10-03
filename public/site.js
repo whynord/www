@@ -87,6 +87,25 @@
   });
 })();
 
+/* Hero background video: loops via the loop attribute; pause + show poster
+   when the visitor prefers reduced motion or has Data Saver on. */
+(function () {
+  var v = document.querySelector('.hero-video-el');
+  if (!v) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var conn = navigator.connection || navigator.webkitConnection || navigator.mozConnection;
+  var saveData = !!(conn && conn.saveData);
+  if (reduce || saveData) {
+    v.removeAttribute('autoplay');
+    v.autoplay = false;
+    v.removeAttribute('loop');
+    try { v.pause(); v.currentTime = 0; } catch (e) {}
+    return;
+  }
+  var tryPlay = function () { var p = v.play(); if (p && p.catch) { p.catch(function () {}); } };
+  if (v.readyState >= 2) { tryPlay(); } else { v.addEventListener('loadeddata', tryPlay, { once: true }); }
+})();
+
 /* Scroll cue: fades once the visitor starts scrolling */
 (function () {
   var cue = document.querySelector('.scroll-cue');
