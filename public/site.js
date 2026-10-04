@@ -104,6 +104,27 @@
   }
   var tryPlay = function () { var p = v.play(); if (p && p.catch) { p.catch(function () {}); } };
   if (v.readyState >= 2) { tryPlay(); } else { v.addEventListener('loadeddata', tryPlay, { once: true }); }
+
+  /* Sound on/off toggle. Video autoplays muted (browser requirement); the
+     button lets the visitor unmute. Shown only while the video is playing. */
+  var btn = document.querySelector('.hero-sound');
+  if (btn) {
+    var label = btn.querySelector('.hero-sound-label');
+    var sync = function () {
+      var on = !v.muted;
+      btn.classList.toggle('is-on', on);
+      btn.setAttribute('aria-pressed', String(on));
+      btn.setAttribute('aria-label', on ? 'Turn sound off' : 'Turn sound on');
+      if (label) { label.textContent = on ? 'Sound on' : 'Sound off'; }
+    };
+    btn.hidden = false;
+    btn.addEventListener('click', function () {
+      v.muted = !v.muted;
+      if (!v.muted) { v.volume = 1; tryPlay(); }
+      sync();
+    });
+    sync();
+  }
 })();
 
 /* Scroll cue: fades once the visitor starts scrolling */
