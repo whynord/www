@@ -136,12 +136,13 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .hero-media { position: absolute; inset: 0; z-index: 0; overflow: hidden; background: #0b0c08; }
 .hero-video-el { width: 100%; height: 100%; object-fit: cover; display: block; }
-/* The footage is dark, so the hero reads as a cinematic dark zone in BOTH
-   themes: a dark scrim (heavier toward the headline) with bone text. */
+/* Bone text over the video in BOTH themes. A light scrim, weighted to the
+   bottom where the headline sits, keeps the footage's colour vibrant while
+   holding legibility. */
 .hero-scrim { position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(180deg, rgba(8,10,6,.40) 0%, rgba(8,10,6,.60) 55%, rgba(8,10,6,.90) 100%); }
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.14) 45%, rgba(0,0,0,.60) 100%); }
 .hero-video .hero-intro { position: relative; z-index: 1; min-height: auto; gap: 32px; }
-.hero-video .eyebrow { color: var(--hero-fg); }
+.hero-video .eyebrow { color: var(--hero-fg); text-shadow: 0 1px 16px rgba(0,0,0,.5); }
 .hero-video .type-hero { color: var(--hero-fg); text-shadow: 0 2px 30px rgba(0, 0, 0, .55); }
 .hero-video .scroll-cue {
   display: inline-flex; align-self: flex-start; align-items: center; gap: 12px;
