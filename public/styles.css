@@ -186,6 +186,7 @@ img { display: block; max-width: 100%; height: auto; }
 .fact-num { font-family: var(--font-display); font-size: 56px; line-height: 0.8; color: var(--ink-display); }
 
 /* Offerings */
+.offerings-more { margin-top: 40px; }
 .offerings { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
 .offerings li {
   display: grid; grid-template-columns: 120px 352px minmax(0, 1fr); align-items: baseline;
